@@ -1,0 +1,170 @@
+Requêtes SQL
+
+Générale
+
+• Triage 
+	Triage par date :
+		- "créé après une date donnée"
+		- "créé avant une date donnée"
+		- "triés par la date créée"
+		- "soumis après une date donnée"
+		- "soumis avant une date donnée"
+		- "triés par la date soumis"
+		- "triés par la date du dernier mis à jour"
+
+	Triage par popularité :
+		- "trié par noteMoyenne"
+		- "trié par nbClic"
+
+Niveau: Application
+
+Nombre de requêtes = 129
+					
+	• Contenu
+		"Trouver tout contenu ... "
+		
+		o par mot clé
+			- nomContenu (non-stricte) : "ayant un mot clé dans son nom ... "
+					trié par date
+					trié par popularité
+						
+			- nomContenu (stricte) : "ayant un nom complètement égal à un mot clé ... "
+					trié par date
+					trié par popularité
+
+			- description : "ayant un mot clé dans sa description ... "
+					trié par date
+					trié par popularité
+				
+		o par une métadonnée
+			- licence : "ayant un licence donné ... "
+					trié par date
+					trié par popularité
+
+			- type de contenu : "ayant un extension donné ... "
+					trié par date
+					trié par popularité
+			
+			- auteur : "ayant un auteur donné ... "
+					trié par date
+					trié par popularité
+				
+			- sous-theme : "ayant un sous-theme donné ... "
+					trié par date
+					trié par popularité
+			
+			- theme : "ayant un theme donné ... "
+					trié par date
+					trié par popularité
+				
+			- categorie : "dans un catégorie donné ... "
+					trié par date
+					trié par popularité
+				
+			- source : "vennant d'un source donné ... "
+					trié par date
+					trié par popularité
+
+	• Utilisateur
+		"Trouver l'utilisateur ... "
+		
+		o par pseudo 
+			- pseudo : "ayant le pseudo donné ... "
+			
+		"Modifier X donnée de l'utilisateur donné ... "
+			o pseudo
+			o motPass
+			o email
+
+	• Playlist
+		"Trouver tout playlist ... "
+		
+		o par id : "ayant un id donné ... "
+		o par nom : "ayant le nom donné ... "
+		o par utilisateur : "créé par l'utilisateur donné ... "
+	
+	• Vote
+		"Insérer la vote donnée ... "
+		"Modifier la vote donnée ... "
+	
+Niveau : Administrateur
+
+Nombre de requêtes = 38
+
+	• Vote
+		"Insérer la vote donnée ... "
+		"Modifier la vote donnée ... "
+		"Supprimer la vote donnée ... "
+	
+	• Commentaire
+		"Insérer le commentaire donné ... "
+		"Modifier la texte du commentaire donné ... "
+		"Supprimer la vote donnée ... "
+	
+	• Playlist
+		"Insérer le playlist donné ... "
+		"Modifier le nom du playlist donné ... "
+		"Supprimer le playlist donné ... "
+	
+	• Contenu
+		"Insérer le contenu donné ... "
+		"Modifier X donnée du contenu donné ... "
+			o nomContenu
+			o description
+			o estValide
+		"Supprimer le contenu donné ... "
+	
+	• Utilisateur
+		"Insérer l'utilisateur donné ... "
+		"Modifier X donnée de l'utilisateur donné ... "
+			o motPass
+			o estAutorise
+		"Supprimer l'utilisateur donné ... "
+	
+	• Licence
+		"Insérer la licence donné ... "
+		"Modifier le nom de la licence donné ... "
+		"Supprimer la licence donné ... "
+	
+	• TypeContenu
+		"Insérer le type de contenu donné ... "
+		"Modifier le nom du type de contenu donné ... "
+		"Supprimer le type de contenu donné ... "
+	
+	• Auteur
+		"Insérer l'auteur donné ... "
+		"Modifier le nom de l'auteur donné ... "
+		"Supprimer l'auteur donné ... "
+	
+	• SousTheme
+		"Insérer le sous-theme donné ... "
+		"Modifier le nom du sous-theme donné ... "
+		"Modifier le thème du sous-theme donné ... "
+		"Supprimer le sous-theme donné ... "
+	
+	• Theme
+		"Insérer le theme donné ... "
+		"Modifier le nom de le theme donné ... "
+		"Modifier la catégorie du theme donné ... "
+		"Supprimer le theme donné ... "
+	
+	• Categorie	
+		"Insérer la catégorie donné ... "
+		"Modifier le nom de la catégorie donné ... "
+		"Supprimer la catégorie donné ... "
+
+Niveau : Automatique
+
+Nombre de requêtes = 6
+
+	• Vote
+		"Vérifier l'existance d'un vote."
+		
+	• Contenu
+		"Modifier la dernière date du mis à jour d'un contenu."
+		"Modifier la noteMoyenne d'un contenu."
+		"Incrementer la nbClic sur un contenu."
+	
+	• Utilisateur
+		"Modifier le contenu le plus récent d'une utilisateur."
+		"Modifier le sous-theme favorit d'une utilisateur."
