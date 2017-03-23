@@ -38,8 +38,8 @@ header p{
 header img{
     width:30px;
     height:30px;
-    margin-left: 20px;
-    margin-right: 35px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 header li {
@@ -58,7 +58,7 @@ footer{
     color: whitesmoke;
     overflow: hidden;
     margin:0;
-    background-color: #415F9D
+    background-color: #415F9D;
 }
 
 footer h1{
@@ -106,8 +106,9 @@ a:hover {
 
 /*---------composantMenu---------*/
 /* General styles for all menus */
+
 .cbp-spmenu {
-    background: #47a3da;
+    background: #415F9D;
     position: fixed;
 }
 
@@ -119,12 +120,12 @@ a:hover {
 }
 
 .cbp-spmenu a:hover {
-    background: #258ecd;
+    background: #7E97C9;
 }
 
 .cbp-spmenu a:active {
-    background: #afdefa;
-    color: #47a3da;
+    background: #DAE1EF;
+    color: darkslategrey;
 }
 
 /* Orientation-dependent styles for the content of the menu */

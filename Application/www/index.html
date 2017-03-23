@@ -9,45 +9,45 @@
 
 <body class="cbp-spmenu-push">
 
-<header>
-    <ul>
-        <li><button id="showLeft">burger</button></li>
-        <li><a href="/www/index.html"><img class="logoPrincipal" src="img/logo.png" alt="libr.io"></a></li>
-        <li><p>Libr.io</p></li>
-    </ul>
-</header>
+    <header>
+        <ul>
+            <li><button id="showLeft"><img src="img/menu.png" /></button></li>
+            <li><a href="/www/index.html"><img class="logoPrincipal" src="img/logo.png" alt="libr.io"></a></li>
+            <li><p>Libr.io</p></li>
+        </ul>
+    </header>
 
-<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-    <a href="index.html"><img class="c-menu_link" src="img/iconeAccueil.png">Accueil</a>
-    <a href="html/resultats.html"><img class="c-menu_link" src="img/iconeTheme.png">Themes</a>
-    <a href="html/playlists.html"><img class="c-menu_link" src="iconePlaylist.jpg">Mes playlists</a>
-    <a href="html/proposition.html"><img class="c-menu_link" src="iconeProposerFichier.jpg">Proposer un fichier</a>
-    <a href="index.html#suggestion"><img class="c-menu_link" src="iconeSuggestions.jpg">Suggestions</a>
-    <a href="html/parametres.html"><img class="c-menu_link" src="iconeParametres.jpg">Parametres</a>
-    <a href="html/apropos.html"><img class="c-menu_link" src="iconeAPropos.jpg">A propos</a>
-    <a href="html/contact.html"><img class="c-menu_link" src="iconeContact.jpg">Contact</a>
-</nav>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+        <a href="index.html"><img class="c-menu_link" src="img/iconeAccueil.png">Accueil</a>
+        <a href="html/resultats.html"><img class="c-menu_link" src="img/iconeTheme.png">Themes</a>
+        <a href="html/playlists.html"><img class="c-menu_link" src="iconePlaylist.jpg">Mes playlists</a>
+        <a href="html/proposition.html"><img class="c-menu_link" src="iconeProposerFichier.jpg">Proposer un fichier</a>
+        <a href="index.html#suggestion"><img class="c-menu_link" src="iconeSuggestions.jpg">Suggestions</a>
+        <a href="html/parametres.html"><img class="c-menu_link" src="iconeParametres.jpg">Parametres</a>
+        <a href="html/apropos.html"><img class="c-menu_link" src="iconeAPropos.jpg">A propos</a>
+        <a href="html/contact.html"><img class="c-menu_link" src="iconeContact.jpg">Contact</a>
+    </nav>
 
 
-<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
-<script src="js/classie.js"></script>
-<script>
-    var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-        showLeft = document.getElementById( 'showLeft' ),
-        body = document.body;
+    <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+    <script src="js/classie.js"></script>
+    <script>
+        var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+            showLeft = document.getElementById( 'showLeft' ),
+            body = document.body;
 
-    showLeft.onclick = function() {
-        classie.toggle( this, 'active' );
-        classie.toggle( menuLeft, 'cbp-spmenu-open' );
-        disableOther( 'showLeft' );
-    };
+        showLeft.onclick = function() {
+            classie.toggle( this, 'active' );
+            classie.toggle( menuLeft, 'cbp-spmenu-open' );
+            disableOther( 'showLeft' );
+        };
 
-    function disableOther( button ) {
-        if( button !== 'showLeft' ) {
-            classie.toggle( showLeft, 'disabled' );
+        function disableOther( button ) {
+            if( button !== 'showLeft' ) {
+                classie.toggle( showLeft, 'disabled' );
+            }
         }
-    }
-</script>
+    </script>
 
 
     <div id="recommandation">
@@ -75,7 +75,5 @@
            <li><a href=http://www.soundcloud.com><img class="logo" src="img/soundcloud.png" alt="soundcloud" /></a></li>
        </ul>
    </footer>
-
-
 </body>
 </html>
