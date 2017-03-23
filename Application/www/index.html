@@ -19,13 +19,13 @@
 
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
         <a href="index.html"><img class="c-menu_link" src="img/iconeAccueil.png">Accueil</a>
-        <a href="html/resultats.html"><img class="c-menu_link" src="img/iconeTheme.png">Themes</a>
-        <a href="html/playlists.html"><img class="c-menu_link" src="iconePlaylist.jpg">Mes playlists</a>
-        <a href="html/proposition.html"><img class="c-menu_link" src="iconeProposerFichier.jpg">Proposer un fichier</a>
-        <a href="index.html#suggestion"><img class="c-menu_link" src="iconeSuggestions.jpg">Suggestions</a>
-        <a href="html/parametres.html"><img class="c-menu_link" src="iconeParametres.jpg">Parametres</a>
-        <a href="html/apropos.html"><img class="c-menu_link" src="iconeAPropos.jpg">A propos</a>
-        <a href="html/contact.html"><img class="c-menu_link" src="iconeContact.jpg">Contact</a>
+        <a href="html/resultats.html"><img class="c-menu_link" src="img/search.png">Themes</a>
+        <a href="html/playlists.html"><img class="c-menu_link" src="img/list.png">Mes playlists</a>
+        <a href="html/proposition.html"><img class="c-menu_link" src="img/link.png">Proposer</a>
+        <a href="index.html#suggestion"><img class="c-menu_link" src="img/suggestion.png">Suggestions</a>
+        <a href="html/parametres.html"><img class="c-menu_link" src="img/param.png">Parametres</a>
+        <a href="html/apropos.html"><img class="c-menu_link" src="img/propos.png">A propos</a>
+        <a href="html/contact.html"><img class="c-menu_link" src="img/contact.png">Contact</a>
     </nav>
 
 
@@ -49,6 +49,19 @@
         }
     </script>
 
+    <div id="browser">
+        <form method="post" action="">
+            <fieldset>
+                <table class="tableBrowser">
+                    <tr>
+                        <td><input id="recherche" type="varchar" name="param1" /></td>
+                        <td><input id="boutonOK" value="ok" class="bouton" type="submit"/></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+
 
     <div id="recommandation">
         <p>Recommandation</p>
@@ -58,9 +71,9 @@
         <p>Nos Suggestions</p>
     </div>
 
-    <div id="boutonContact">
+    <div class="contact">
         <a href="html/contact.html">
-            <button>Contactez nous !</button>
+            <button id="boutonContact"><p id="texteContact">Contactez nous !</p></button>
         </a>
     </div>
 

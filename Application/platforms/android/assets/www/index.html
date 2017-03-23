@@ -3,112 +3,77 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+
     <title>Libr.io</title>
 </head>
-<body>
-    <div class="menu">
-        <div class="menuHeader">
-            <!-- Pseudo (dynamique) -->
-            <!-- Avatar (dynamique) -->
-        </div>
 
-        <div class="menuBody">
-            <ul>
-                <li>
-                    <a href="index.html">
-                        <img class="logo" src="img/iconeAccueil.png">
-                        <h2> Accueil !! </h2>
-                    </a>
-                </li>
+<body class="cbp-spmenu-push">
 
-                <li>
-                    <img class="logo" src="img/iconeTheme.png">
-                    <h2> Themes </h2>
-                    <h3> theme 1 </h3>
-                        <h3> sous theme 2 </h3>
-                        <h3> sous theme 3 </h3>
-                        <h3> sous theme 4 </h3>
-                        <h3> sous theme 5 </h3>
-                    <h3> theme 2 </h3>
-                        <h3> sous theme 2 </h3>
-                        <h3> sous theme 3 </h3>
-                        <h3> sous theme 4 </h3>
-                        <h3> sous theme 5 </h3>
-                    <h3> theme 3 </h3>
-                        <h3> sous theme 2 </h3>
-                        <h3> sous theme 3 </h3>
-                        <h3> sous theme 4 </h3>
-                        <h3> sous theme 5 </h3>
-                </li>
+    <header>
+        <ul>
+            <li><button id="showLeft"><img src="img/menu.png" /></button></li>
+            <li><a href="/www/index.html"><img class="logoPrincipal" src="img/logo.png" alt="libr.io"></a></li>
+            <li><p>Libr.io</p></li>
+        </ul>
+    </header>
 
-                <li>
-                    <a href="html/playlists.html">
-                        <img class="logo" src="iconePlaylist.jpg">
-                        <h2> Mes playlists </h2>
-                    </a>
-                </li>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+        <a href="index.html"><img class="c-menu_link" src="img/iconeAccueil.png">Accueil</a>
+        <a href="html/resultats.html"><img class="c-menu_link" src="img/iconeTheme.png">Themes</a>
+        <a href="html/playlists.html"><img class="c-menu_link" src="iconePlaylist.jpg">Mes playlists</a>
+        <a href="html/proposition.html"><img class="c-menu_link" src="iconeProposerFichier.jpg">Proposer un fichier</a>
+        <a href="index.html#suggestion"><img class="c-menu_link" src="iconeSuggestions.jpg">Suggestions</a>
+        <a href="html/parametres.html"><img class="c-menu_link" src="iconeParametres.jpg">Parametres</a>
+        <a href="html/apropos.html"><img class="c-menu_link" src="iconeAPropos.jpg">A propos</a>
+        <a href="html/contact.html"><img class="c-menu_link" src="iconeContact.jpg">Contact</a>
+    </nav>
 
-                <li>
-                    <a href="html/proposition.html">
-                        <img class="logo" src="iconeProposerFichier.jpg">
-                        <h2> Proposer un fichier </h2>
-                    </a>
-                </li>
 
-                <li>
-                    <a href="index.html#suggestion">
-                        <img class="logo" src="iconeSuggestions.jpg">
-                        <h2> Suggestions </h2>
-                    </a>
-                </li>
+    <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+    <script src="js/classie.js"></script>
+    <script>
+        var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+            showLeft = document.getElementById( 'showLeft' ),
+            body = document.body;
 
-                <li>
-                    <a href="html/parametres.html">
-                        <img class="logo" src="iconeParametres.jpg">
-                        <h2> Parametres </h2>
-                    </a>
-                </li>
+        showLeft.onclick = function() {
+            classie.toggle( this, 'active' );
+            classie.toggle( menuLeft, 'cbp-spmenu-open' );
+            disableOther( 'showLeft' );
+        };
 
-                <li>
-                    <a href="html/apropos.html">
-                        <img class="logo" src="iconeAPropos.jpg">
-                        <h2> A propos </h2>
-                    </a>
-                </li>
+        function disableOther( button ) {
+            if( button !== 'showLeft' ) {
+                classie.toggle( showLeft, 'disabled' );
+            }
+        }
+    </script>
 
-                <li>
-                    <a href="html/contact.html">
-                        <img class="logo" src="iconeContact.jpg">
-                        <h2> Contact </h2>
-                    </a>
-                </li>
-            </ul>
-        </div>
+
+    <div id="recommandation">
+        <p>Recommandation</p>
     </div>
-
-
-    <div class="corps">
-        <header>
-            <img id="burger" src="img/hamburger.jpg">
-            <img class="logoPrincipal" src="img/logoLibrio.jpg">
-        </header>
-    </div>
-
 
     <div id="suggestion">
         <p>Nos Suggestions</p>
     </div>
 
-    <footer>
-        <h1>Libr.io</h1>
-        <ul>
-            <li>Conditions d'utilisation</li>
-            <li>Paramètres</li>
-        </ul><br>
-        <a href="http://www.facebook.com"><img class="logo" src="img/facebook" alt="facebook" /></a>
-        <a href="http://www.twitter.com"><img class="logo" src="img/twitter" alt="twitter" /></a>
-        <a href=http://www..com><img class="logo" src="img/google" alt="google" /></a>
-        <a href=http://www.soundcloud.com><img class="logo" src="img/soundcloud.png" alt="soundcloud" /></a>
-    </footer>
+    <div id="boutonContact">
+        <a href="html/contact.html">
+            <button>Contactez nous !</button>
+        </a>
+    </div>
+
+   <footer>
+       <h1>Libr.io</h1>
+       <p>parametre</p>
+       <p>a propos</p>
+       <ul>
+           <li><a href="http://www.facebook.com"><img class="logo" src="img/facebook.png" alt="facebook" /></a></li>
+           <li><a href="http://www.twitter.com"><img class="logo" src="img/twitter.png" alt="twitter" /></a></li>
+           <li><a href=http://www..com><img class="logo" src="img/google.png" alt="google" /></a></li>
+           <li><a href=http://www.soundcloud.com><img class="logo" src="img/soundcloud.png" alt="soundcloud" /></a></li>
+       </ul>
+   </footer>
 </body>
 </html>

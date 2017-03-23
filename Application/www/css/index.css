@@ -1,4 +1,4 @@
-body {
+body, html {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
@@ -6,23 +6,24 @@ body {
     background-attachment:fixed;
 
     font-family: "HelveticaNeue", "Helvetica", "Frutiger", "Avenir",  "Arial", sans-serif;
-    font-size:12px;
+    font-size:100%;
     height:100%;
-    margin:0px;
-    padding:0px;
+    margin:0;
+    padding:0;
     width:100%;
     color: #303030;
 }
 
 /*-----------------------logo menu-----------------*/
 nav img {
-    width:30px;
-    height:30px;
+    width:35px;
+    height:35px;
     margin-left: 20px;
     margin-right: 35px;
 }
 
 /*-------------------------header-------------------*/
+
 header ul {
     list-style-type: none;
     overflow: hidden;
@@ -36,8 +37,8 @@ header p{
 }
 
 header img{
-    width:30px;
-    height:30px;
+    width:35px;
+    height:35px;
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -50,7 +51,18 @@ header li {
     float:left;
 }
 
+button[id="showLeft"]{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin:  0;
+    margin-right: 30%;
+}
 
+a[href="/www/index.html"]{
+    padding: 0;
+    margin-right: 20px;
+}
 /*----------------------footer-----------------------*/
 
 footer{
@@ -58,7 +70,7 @@ footer{
     color: whitesmoke;
     overflow: hidden;
     margin:0;
-    background-color: #415F9D;
+    background-color: #233B6E;
 }
 
 footer h1{
@@ -69,8 +81,8 @@ footer p{
     margin-left: 20px;
 }
 footer img{
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
 }
 
 footer li {
@@ -81,16 +93,59 @@ footer li {
     float:left;
 }
 
-/*----------------------contactez-nous-----------------------*/
-#boutonContact{
+/*----------------------Browser-----------------------*/
+#browser{
+    position: relative;
+    margin: 4% 43% 0 43%;
+}
+
+
+.tableBrowser{
+    border: none;
+}
+
+fieldset{
+    border: none;
+}
+
+#boutonOK{
+    background-color: #415F9D ;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+}
+
+/*----------------------recommandation-----------------------*/
+#recommandation{
     text-align: center;
+}
+/*----------------------suggestion-----------------------*/
+#suggestion{
+    text-align: center;
+}
+/*----------------------contactez-nous-----------------------*/
+.contact{
+    text-align: center;
+}
+
+#boutonContact{
+    background-color: #415F9D ;
+    color: whitesmoke;
+    border: none;
+    margin: 5%;
+    padding: 2% 4%;
+    cursor: pointer;
+}
+p[id="texteContact"]{
+    margin:0;
+    padding: 0;
 }
 
 /*------------------------menu-------------------------------*/
 
 /*-----defaut-------*/
 
-body, html { font-size: 100%; 	padding: 0; margin: 0;}
+
 
 *,
 *:after,
@@ -108,7 +163,7 @@ a:hover {
 /* General styles for all menus */
 
 .cbp-spmenu {
-    background: #415F9D;
+    background: #7E97C9;
     position: fixed;
 }
 
@@ -117,14 +172,16 @@ a:hover {
     color: #fff;
     font-size: 1.1em;
     font-weight: 300;
+    text-decoration: none;
 }
 
 .cbp-spmenu a:hover {
-    background: #7E97C9;
+    background: #FFFFFF;
+    color: darkslategrey;
 }
 
 .cbp-spmenu a:active {
-    background: #DAE1EF;
+    background: #FFFFFF;
     color: darkslategrey;
 }
 
