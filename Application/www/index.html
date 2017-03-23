@@ -3,112 +3,76 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+
     <title>Libr.io</title>
 </head>
 <body>
+<script src="js/index.js"></script>
     <div class="menu">
         <div class="menuHeader">
             <!-- Pseudo (dynamique) -->
             <!-- Avatar (dynamique) -->
         </div>
 
-        <div class="menuBody">
-            <ul>
-                <li>
-                    <a href="index.html">
-                        <img class="logo" src="img/iconeAccueil.png">
-                        <h2> Accueil </h2>
-                    </a>
-                </li>
 
-                <li>
-                    <img class="logo" src="img/iconeTheme.png">
-                    <h2> Themes </h2>
-                    <h3> theme 1 </h3>
-                        <h3> sous theme 2 </h3>
-                        <h3> sous theme 3 </h3>
-                        <h3> sous theme 4 </h3>
-                        <h3> sous theme 5 </h3>
-                    <h3> theme 2 </h3>
-                        <h3> sous theme 2 </h3>
-                        <h3> sous theme 3 </h3>
-                        <h3> sous theme 4 </h3>
-                        <h3> sous theme 5 </h3>
-                    <h3> theme 3 </h3>
-                        <h3> sous theme 2 </h3>
-                        <h3> sous theme 3 </h3>
-                        <h3> sous theme 4 </h3>
-                        <h3> sous theme 5 </h3>
-                </li>
-
-                <li>
-                    <a href="html/playlists.html">
-                        <img class="logo" src="iconePlaylist.jpg">
-                        <h2> Mes playlists </h2>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="html/proposition.html">
-                        <img class="logo" src="iconeProposerFichier.jpg">
-                        <h2> Proposer un fichier </h2>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="index.html#suggestion">
-                        <img class="logo" src="iconeSuggestions.jpg">
-                        <h2> Suggestions </h2>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="html/parametres.html">
-                        <img class="logo" src="iconeParametres.jpg">
-                        <h2> Parametres </h2>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="html/apropos.html">
-                        <img class="logo" src="iconeAPropos.jpg">
-                        <h2> A propos </h2>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="html/contact.html">
-                        <img class="logo" src="iconeContact.jpg">
-                        <h2> Contact </h2>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
-    <div class="corps">
         <header>
-            <img id="burger" src="img/hamburger.jpg">
-            <img class="logoPrincipal" src="img/logoLibrio.jpg">
-        </header>
-    </div>
+            <ul>
+                <li><img id="burger" src="img/menu.png"></li>
+                <li><a href="/www/index.html"><img class="logoPrincipal" src="img/logo.png" alt="libr.io"></a></li>
+                <li><p>Libr.io</p></li>
+            </ul>
+       </header>
 
+
+       <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+           <!--<button class="c-menu_close">&larr; Close Menu</button>-->
+           <ul class="c-menu_item">
+               <li class="c-menu_item"><a href="index.html"><img class="c-menu_link" src="img/iconeAccueil.png">Accueil</a></li>
+               <li class="c-menu_item"><a href="html/resultats.html"><img class="c-menu_link" src="img/iconeTheme.png">Themes</li>
+               <li class="c-menu_item"><a href="html/playlists.html"><img class="c-menu_link" src="iconePlaylist.jpg">Mes playlists</a></li>
+               <li class="c-menu_item"><a href="html/proposition.html"><img class="c-menu_link" src="iconeProposerFichier.jpg">Proposer un fichier</a></li>
+               <li class="c-menu_item"><a href="index.html#suggestion"><img class="c-menu_link" src="iconeSuggestions.jpg">Suggestions</a></li>
+               <li class="c-menu_item"><a href="html/parametres.html"><img class="c-menu_link" src="iconeParametres.jpg">Parametres</a></li>
+               <li class="c-menu_item"><a href="html/apropos.html"><img class="c-menu_link" src="iconeAPropos.jpg">A propos</a></li>
+               <li class="c-menu_item"><a href="html/contact.html"><img class="c-menu_link" src="iconeContact.jpg">Contact</a></li>
+           </ul>
+       </nav>
+
+        <!-- /c-mask -->
+        <div id="c-mask" class="c-mask"></div>
+
+
+   </div>
+
+
+
+    <div id="recommandation">
+        <p>Recommandation</p>
+    </div>
 
     <div id="suggestion">
         <p>Nos Suggestions</p>
     </div>
 
-    <footer>
-        <h1>Libr.io</h1>
-        <ul>
-            <li>Conditions d'utilisation</li>
-            <li>Paramètres</li>
-        </ul><br>
-        <a href="http://www.facebook.com"><img class="logo" src="img/facebook" alt="facebook" /></a>
-        <a href="http://www.twitter.com"><img class="logo" src="img/twitter" alt="twitter" /></a>
-        <a href=http://www..com><img class="logo" src="img/google" alt="google" /></a>
-        <a href=http://www.soundcloud.com><img class="logo" src="img/soundcloud.png" alt="soundcloud" /></a>
-    </footer>
+    <div id="boutonContact">
+        <a href="html/contact.html">
+            <button>Contactez nous !</button>
+        </a>
+    </div>
+
+   <footer>
+       <h1>Libr.io</h1>
+       <p>parametre</p>
+       <p>a propos</p>
+       <ul>
+
+           <li><a href="http://www.facebook.com"><img class="logo" src="img/facebook.png" alt="facebook" /></a></li>
+           <li><a href="http://www.twitter.com"><img class="logo" src="img/twitter.png" alt="twitter" /></a></li>
+           <li><a href=http://www..com><img class="logo" src="img/google.png" alt="google" /></a></li>
+           <li><a href=http://www.soundcloud.com><img class="logo" src="img/soundcloud.png" alt="soundcloud" /></a></li>
+       </ul>
+   </footer>
+
+
 </body>
 </html>
