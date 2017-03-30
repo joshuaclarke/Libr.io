@@ -1,0 +1,17 @@
+INSERT INTO LIENSE(nomLicence) VALUES(?);
+
+
+INSERT INTO TYPECONTENU(nomContenu) VALUES(?);
+
+
+INSERT INTO CATEGORIE(nomCategorie) VALUES (?);
+
+INSERT INTO THEME(nomTheme,fkCategorie) VALUES(?,?);
+
+INSERT INTO SOUSTHEME(nomSousTheme,fkIdTheme) VALUES(?,?);
+
+
+INSERT INTO AUTEUR(nomAuteur) VALUES(?,?);
+
+
+INSERT INTO CONTENU(url,nom,description,fkIdLicence,fkIdTypeContenu,fkIdAuteur,fkIdSousTheme) VALUES(?,?,?,?,?,?,?);
