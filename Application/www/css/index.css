@@ -4,7 +4,6 @@ body, html {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#EFF0F4;
     background-attachment:fixed;
-
     font-family: "HelveticaNeue", "Helvetica", "Frutiger", "Avenir",  "Arial", sans-serif;
     font-size:100%;
     height:100%;
@@ -31,7 +30,7 @@ header ul {
     background-color: #415F9D
 }
 header p{
-    font-size:15px;
+    font-size:20px;
     padding: 0;
     margin:  15% 0 0 0;
 }
@@ -75,53 +74,94 @@ footer{
 
 footer h1{
     text-align: center;
+    font-size: 27px;
+    font-weight: lighter;
 }
 
 footer p{
     margin-left: 20px;
 }
+
+footer p:hover{
+    color: #FF7E67;
+}
+
 footer img{
     width:40px;
     height:40px;
 }
 
-footer li {
-    display: block;
-    color: white;
-    padding: 10px 0px;
+.lienFooter{
     text-decoration: none;
-    float:left;
+    color:whitesmoke;
+}
+
+.lienFooter:hover{
+
+}
+
+.footerClass{
+    text-decoration: none;
+    text-align: center;
+    margin:auto;
+    padding:5%;
+}
+
+div a {
+    padding:3%;
 }
 
 /*----------------------Browser-----------------------*/
 #browser{
-    position: relative;
-    margin: 4% 43% 0 43%;
-}
-
-
-.tableBrowser{
-    border: none;
+    display: inline;
+    text-align: center;
 }
 
 fieldset{
     border: none;
 }
 
+#recherche{
+    font-size: 17pt;
+    cursor: text;
+    width: 210px;
+    height: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
 #boutonOK{
     background-color: #415F9D ;
     color: whitesmoke;
     border: none;
+    font-size: 17pt;
     cursor: pointer;
+    width: 45px;
+    height: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 /*----------------------recommandation-----------------------*/
 #recommandation{
     text-align: center;
+    list-style-type: none;
+    color: darkslategray;
+    overflow: hidden;
+    margin:0;
+    margin-bottom: 5%;
+    background-color: #FAFAFA;
+    font-size: 22px;
 }
 /*----------------------suggestion-----------------------*/
 #suggestion{
     text-align: center;
+    list-style-type: none;
+    color: darkslategray;
+    overflow: hidden;
+    margin:0;
+    background-color: #FAFAFA;
+    font-size: 22px;
 }
 /*----------------------contactez-nous-----------------------*/
 .contact{
@@ -129,13 +169,19 @@ fieldset{
 }
 
 #boutonContact{
-    background-color: #415F9D ;
+    background-color: #FF7E67 ;
     color: whitesmoke;
     border: none;
-    margin: 5%;
-    padding: 2% 4%;
+    margin: 10%;
+    padding: 4% 8%;
     cursor: pointer;
+
 }
+
+#texteContact{
+    font-size: 16px;
+}
+
 p[id="texteContact"]{
     margin:0;
     padding: 0;
@@ -144,8 +190,6 @@ p[id="texteContact"]{
 /*------------------------menu-------------------------------*/
 
 /*-----defaut-------*/
-
-
 
 *,
 *:after,
@@ -162,56 +206,62 @@ a:hover {
 /*---------composantMenu---------*/
 /* General styles for all menus */
 
-.cbp-spmenu {
+.menu {
     background: #7E97C9;
     position: fixed;
+    vertical-align: middle;
 }
 
-.cbp-spmenu a {
+.menu a{
     display: block;
     color: #fff;
     font-size: 1.1em;
     font-weight: 300;
+    padding: 1em 2em;
     text-decoration: none;
 }
 
-.cbp-spmenu a:hover {
+.menu_link{
+    vertical-align:middle;
+}
+
+.menu a:hover {
     background: #FFFFFF;
     color: darkslategrey;
 }
 
-.cbp-spmenu a:active {
+.menu a:active {
     background: #FFFFFF;
     color: darkslategrey;
 }
 
 /* Orientation-dependent styles for the content of the menu */
 
-.cbp-spmenu-vertical {
+.menu-vertical {
     width: 240px;
     height: 100%;
     top: 0;
     z-index: 1000;
 }
 
-.cbp-spmenu-vertical a {
+.menu-vertical a {
     border-bottom: 1px solid #258ecd;
     padding: 1em;
 }
 
 /* Vertical menu that slides from the left or right */
 
-.cbp-spmenu-left {
+.menu-left {
     left: -240px;
 }
 
-.cbp-spmenu-left.cbp-spmenu-open {
+.menu-left.menu-open {
     left: 0px;
 }
 
 /* Transitions */
-.cbp-spmenu,
-.cbp-spmenu-push {
+.menu,
+.menu-push {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
