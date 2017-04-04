@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+ <button type="button" onclick="loadDoc()">Donne moi les places de Velovs libres !</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    myFunction(this);
+    }
+  };
+  xhttp.open("GET", "https://download.data.grandlyon.com/ws/rdata/jcd_jcdecaux.jcdvelov/all.json", true);
+  xhttp.send();
+}
+function myFunction(reponse) {
+
+    var grandLyon = JSON.parse(reponse.responseText);
+    var velovs="";
+    var stations=grandLyon.values;
+    for(var i=0; i<stations.length; i++) {
+      velovs+=stations[i].name+" : "+stations[i].available_bike_stands+" places libres.<hr/>";
+    }
+    document.getElementById("demo").innerHTML = velovs;
+}
+</script>
+</body>
+</html>
