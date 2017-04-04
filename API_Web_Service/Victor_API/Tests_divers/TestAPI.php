@@ -1,5 +1,5 @@
 <?php
-  header('Content-Type: application/json');
+  // header('Content-Type: application/json');
   function connectDb(){
       $host = 'iutdoua-web.univ-lyon1.fr'; // ou sql.hebergeur.com
       $user = 'p1612212';      // ou login
@@ -19,14 +19,12 @@
 /*************************************************************************/
 
 
-  $search = isset($_POST['search']) ? $_POST['search'] : '';
-
-  $requete='select * from CONTENU where nom='.$search;
-  if()
-
+  $search = isset($_GET['search']) ? $_GET['search'] : '';
   $bdd = connectDb();
-  $query = $bdd -> prepare($requete);
-  $query->execute(); // paramètres et exécution
+  // $query = $bdd -> prepare('select * from CONTENU where UPPER(nom)=UPPER(:search)');
+  // $query = $bdd -> prepare('select * from CONTENU where :search rlike ".*"');
+  $query = $bdd -> prepare('select * from CONTENU where nom sounds like :search');
+  $query->execute(array('search' => $search )); // paramètres et exécution
   $all = [];
   while ($data = $query->fetch()) // lecture par ligne
   {
