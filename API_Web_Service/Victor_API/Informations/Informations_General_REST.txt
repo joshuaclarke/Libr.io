@@ -1,0 +1,25 @@
+Informations Générales sur l'Architecture REST
+Ecrit par Victor LAURENT
+Le 18 mars 2017
+
+
+  L’architecture REST a été définie dans la thèse de Roy Fielding en 2000.
+
+  REST est une ARCHITECTURE et non un protocole comme SOAP.
+  Elle n'a pas de spécification W3C.
+
+  Particularités :
+    Le web service ne conserve pas l'état courant, il est StateLess (sans etat).
+    Le client doit toujours envoyer toutes les informations au web service,
+    ainsi le serveur qui l'héberge ne consomme pas trop de mémoire pour
+    l'utilisation de celui-ci.
+    Il utilise le protocole HTTP pour communiquer entre le client et le serveur
+    grâce aux méthodes : GET, POST, PUT, DELETE.
+    Elle oblige a ce que toutes les ressources soient identifiées par une URI
+    (Uniform resource Identifier)
+    Les informations qui sont échangées entre le client et le serveur peuvent
+    être de formes multiple (XML, JSON, ...).
+    Il n'y a pas d'architecture type mais des modèles.
+
+  Le programmeur familier de la programmation C peut considérer que le web
+  service expose une methode de la forme 'function(int a, int b)' 
