@@ -1,18 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
   <title>Inscription</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="../css/index.css">
   <script src="script.js">
     </script>
 </head>
 <body>
-<<<<<<< HEAD
+<!--
     <div class="menu">
         <div class="menuHeader">
-				<!-- Pseudo (dynamique) -->
-				<!-- Avatar (dynamique) -->
         </div>
 			<div class="menuBody">
 				<img src="iconeAccueil.jpg">
@@ -33,26 +31,33 @@
 				<h1> Contact <h1>
 			</div>
 		</div>
+      -->
 		<div class="corps">
-            <hgroup>Inscription</hgroup>
+            <h1>Inscription</h1>
                 <div class="elementInscription">
                     <h2>Renseignements obligatoires</h2>
-                    <form action="_static/formproc/debug">
-                        <label for="login">Identifiant
-                        <input name="text" placeholder="renseignez ici"><br>
-                        <label for="password">Mot de passe
-                        <input type="password"><br>
-                        <label for="login">Confirmer mot de passe
-                       <input type="password">
-                    </form>                
+                    <form action="../php/donnees.php">
+                        <label for="login">Identifiant :
+                          <input name="text" placeholder="renseignez ici"><br><br>
+                        <label for="password">Mot de passe :
+                          <input type="password"><br>
+                        <label for="passwordConf">Confirmer mot de passe :
+                          <input type="password"><br><br>
+                        <label for="emailAdress">Adresse email :
+                          <input name="text" placeholder="renseignez ici"><br>
+                        <label for="emailAdressConf">Confirmation de l'adresse email :
+                          <input name="text"><br><br>
+                        <label for="botTest">Êtes-vous un robot ?<br>
+                          <input name="bot" type="checkbox" value="botYes"> Oui <br>
+                          <input name="bot" type="checkbox" value="botNo"> Non <br>
+                          <input name="bot" type="checkbox" value="botMayBe"> Peut-être <br><br>
+                        <label for="acceptRules">
+                          <input name="rules" type="checkbox" value="iAcceptRules"> J'ai lu l'ensemble des règles et j'accepte de les respecter.<br>
+                    </form>
+
+                    <a href="regles.html">Afficher les règles d'utilisation</a>
+
                 </div>
-    
-                    
-                    
         </div>
-    </body>
-=======
-   <p>inscription</p>
 </body>
->>>>>>> ab048a08882d8b2dc7f13751040f4d4730a6e0d0
 </html>
