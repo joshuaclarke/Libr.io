@@ -153,6 +153,28 @@ fieldset{
     background-color: #FAFAFA;
     font-size: 22px;
 }
+
+.flex-container {
+    display: -webkit-flex;
+    width: auto;
+    height: auto;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.flex-item {
+    position:relative;
+    background-color: #258ecd;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    text-align:center;
+    valign:middle;
+
+
+}
 /*----------------------suggestion-----------------------*/
 #suggestion{
     text-align: center;
