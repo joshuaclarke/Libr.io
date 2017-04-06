@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 
 <html>
+<html lang="fr">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+  <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
 
     <title>Libr.io</title>
 </head>
@@ -11,26 +13,26 @@
 
     <header>
         <ul>
-            <li><button id="showLeft"><img src="img/menu.png" /></button></li>
-            <li><a href="/www/index.html"><img class="logoPrincipal" src="img/logo.png" alt="libr.io"></a></li>
+            <li><button id="showLeft"><img src="../src/img/menu.png" /></button></li>
+            <li><a href="../index.html"><img class="logoPrincipal" src="../src/img/logo.png" alt="libr.io"></a></li>
             <li><p>Libr.io</p></li>
         </ul>
     </header>
 
     <nav class="menu menu-vertical menu-left" id="menu-s1">
-        <a href="index.html"><img class="menu_link" src="img/iconeAccueil.png ">Accueil</a>
-        <a href="html/resultats.html"><img class="menu_link" src="img/search.png">Themes</a>
-        <a href="html/playlists.html"><img class="menu_link" src="img/list.png">Mes playlists</a>
-        <a href="html/proposition.html"><img class="menu_link" src="img/link.png">Proposer</a>
-        <a href="index.html#suggestion"><img class="menu_link" src="img/suggestion.png">Suggestions</a>
-        <a href="html/parametres.html"><img class="menu_link" src="img/param.png">Parametres</a>
-        <a href="html/apropos.html"><img class="menu_link" src="img/propos.png">A propos</a>
-        <a href="html/contact.html"><img class="menu_link" src="img/contact.png">Contact</a>
+        <a href="index.html"><img class="menu_link" src="../src/img/iconeAccueil.png ">Accueil</a>
+        <a href="html/resultats.html"><img class="menu_link" src="../src/img/search.png">Themes</a>
+        <a href="html/playlists.html"><img class="menu_link" src="../src/img/list.png">Mes playlists</a>
+        <a href="html/proposition.html"><img class="menu_link" src="../src/img/link.png">Proposer</a>
+        <a href="index.html#suggestion"><img class="menu_link" src="../src/img/suggestion.png">Suggestions</a>
+        <a href="html/parametres.html"><img class="menu_link" src="../src/img/param.png">Parametres</a>
+        <a href="html/apropos.html"><img class="menu_link" src="../src/img/propos.png">A propos</a>
+        <a href="html/contact.html"><img class="menu_link" src="../src/img/contact.png">Contact</a>
     </nav>
 
 
     <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
-    <script src="js/classie.js"></script>
+    <script src="../js/classie.js"></script>
     <script>
         var menuLeft = document.getElementById( 'menu-s1' ),
             showLeft = document.getElementById( 'showLeft' ),
@@ -71,7 +73,7 @@
                               <input name="bot" type="checkbox" value="botMayBe"> Peut-être <br><br>
                             <label for="acceptRules">
                               <input name="rules" type="checkbox" value="iAcceptRules"> J'ai lu l'ensemble des règles et j'accepte de les respecter.<br>
-                        </form>
+                        </form><br>
 
                         <a href="regles.html">Afficher les règles d'utilisation</a>
 
@@ -83,24 +85,24 @@
 
 
     <div class="contact">
-        <a href="html/contact.html">
+        <a href="contact.html">
             <button id="boutonContact"><p id="texteContact">Contactez nous !</p></button>
         </a>
     </div>
 
    <footer>
        <h1>Libr.io</h1>
-       <a class="lienFooter" href="html/parametres.html">
-           <p>Parametre</p>
+       <a class="lienFooter" href="parametres.html">
+           <p>Paramètres</p>
        </a>
-       <a class="lienFooter" href="html/apropos.html">
+       <a class="lienFooter" href="apropos.html">
            <p>A propos de nous</p>
        </a>
        <div class="footerClass">
-               <a href="http://www.facebook.com"><img class="logo" src="img/facebook.png" alt="facebook" /></a>
-               <a href="http://www.twitter.com"><img class="logo" src="img/twitter.png" alt="twitter" /></a>
-               <a href=http://www..com><img class="logo" src="img/google.png" alt="google" /></a>
-               <a href=http://www.soundcloud.com><img class="logo" src="img/soundcloud.png" alt="soundcloud" /></a>
+               <a href="http://www.facebook.com"><img class="logo" src="../src/img/facebook.png" alt="facebook" /></a>
+               <a href="http://www.twitter.com"><img class="logo" src="../src/img/twitter.png" alt="twitter" /></a>
+               <a href=http://www..com><img class="logo" src="../src/img/google.png" alt="google" /></a>
+               <a href=http://www.soundcloud.com><img class="logo" src="../src/img/soundcloud.png" alt="soundcloud" /></a>
        </div>
    </footer>
 </body>
