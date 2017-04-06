@@ -52,21 +52,29 @@
     </script>
 
 
-    		<div class="corps">
+    		<div>
                 <h1>Inscription</h1>
-                    <div class="elementInscription">
-                        <h2>Renseignements obligatoires</h2>
-                        <form action="js">
-                            <label for="login">Identifiant :
-                              <input name="text" placeholder="renseignez ici"><br><br>
-                            <label for="password">Mot de passe :
-                              <input type="password"><br>
-                            <label for="passwordConf">Confirmer mot de passe :
-                              <input type="password"><br><br>
-                            <label for="emailAdress">Adresse email :
-                              <input name="text" placeholder="renseignez ici"><br>
-                            <label for="emailAdressConf">Confirmation de l'adresse email :
-                              <input name="text"><br><br>
+                <div>
+                  <form action="/action_page.php">
+                    <label for="identifiant">Identifiant</label>
+                    <input type="text" name="identifiant" placeholder="renseignez ici...">
+
+                    <label for="motdepasse">Mot de passe</label>
+                    <input type="password" name="motdepasse">
+
+                    <label for="motdepasseConf">Confirmez votre mot de passe</label>
+                    <input type="password" name="motdepasse">
+
+                    <label for="adresseMail">Adresse mail</label>
+                    <input type="text" name="adresseMail">
+
+                    <label for="adresseMailConf">Confirmation mail</label>
+                    <input type="text" name="adresseMailConf">
+
+                    <input type="submit" value="Envoyer">
+                  </form>
+                </div>
+                <div class="inscriptionValidation">
                             <label for="botTest">Êtes-vous un robot ?<br>
                               <input name="bot" type="checkbox" value="botYes"> Oui <br>
                               <input name="bot" type="checkbox" value="botNo"> Non <br>
@@ -74,9 +82,7 @@
                             <label for="acceptRules">
                               <input name="rules" type="checkbox" value="iAcceptRules"> J'ai lu l'ensemble des règles et j'accepte de les respecter.<br>
                         </form><br>
-
                         <a href="regles.html">Afficher les règles d'utilisation</a>
-
                     </div>
             </div>
 
