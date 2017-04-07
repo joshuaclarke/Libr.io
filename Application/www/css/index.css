@@ -108,9 +108,12 @@ footer img{
 }
 
 div a {
-    padding:3%;
+    padding:0;
 }
 
+.footerClass-logo {
+    padding:3%;
+}
 /*----------------------Browser-----------------------*/
 #browser{
     display: inline;
@@ -146,55 +149,55 @@ fieldset{
 .imageIndex{
     width: 100%;
     height: 80%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 .legendImg{
     margin: 0;
+    margin-bottom: 10px;
+    color: #fafafa;
 }
 
 
 #recommandation{
     text-align: center;
     list-style-type: none;
-    color: darkslategray;
+    color: darkslategrey;
     overflow: hidden;
     margin:0;
     margin-bottom: 5%;
     background-color: #FAFAFA;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .flex-container {
     display: -webkit-flex;
     width: auto;
     height: auto;
-    background-color: white;
+    background-color: #FAFAFA;
     align-items: center;
     justify-content: center;
-
 }
 
 .flex-item {
     position:relative;
-    background-color: #258ecd;
+    background-color: #415F9D;
     width: 100px;
-    height: 180px;
+    height: auto;
     margin: 10px;
     text-align:center;
     valign:middle;
-
 
 }
 /*----------------------suggestion-----------------------*/
 #suggestion{
     text-align: center;
     list-style-type: none;
-    color: darkslategray;
+    color: darkslategrey;
     overflow: hidden;
     margin:0;
     background-color: #FAFAFA;
-    font-size: 22px;
+    font-size: 100%;
 }
 /*----------------------contactez-nous-----------------------*/
 .contact{
@@ -324,4 +327,8 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #45a049;
+}
+
+.inscriptionValidation {
+
 }
