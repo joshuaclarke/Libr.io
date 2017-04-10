@@ -1,0 +1,178 @@
+[class*="col-"] {
+    line-height: 40px;
+    text-align: center;
+}
+
+[class*="col-xs"]{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.container {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+[class*="row"]{
+    margin:0;
+}
+
+
+
+
+[class*="path"] {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 20px;
+}
+
+
+
+
+
+/*bloc1 = note img save*/
+[class*="bloc1"] {
+    padding: 0;
+}
+
+.imageFichier{
+    width: 100%;
+    height: 80%;
+}
+
+[class*="note"] {
+    line-height: 40px;
+    margin-top: 50px;
+    padding: 5px 0;
+    font-size: 20px;
+    color: #00A000;
+}
+
+[class*="titreFichier"] {
+    line-height: 30px;
+    color:darkslategrey;
+    font-size: 30px;
+    margin:25px 0 20px 0;
+}
+
+
+[class*="commentaireFichier"] {
+    line-height: 20px;
+    text-align: left;
+    color:darkslategrey;
+    padding-left: 15px;
+    font-size: 20px;
+    margin:25px 0 20px 0;
+}
+
+
+
+/*************************************************Sauvegarder**********************************************************/
+
+[class*="save"] img{
+    height: 40px;
+    width: 40px;
+}
+
+
+[class*="save"] {
+    margin-top: 50px;
+    line-height: 40px;
+    padding: 0;
+}
+
+/*************************************************Etoile*****************************************************************/
+
+
+[class*="constellation"]{
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+[class*="etoile"]{
+    padding-left: 0;
+}
+
+[class*="etoile"] img{
+    height: 15px;
+    width: 15px;
+}
+
+button{
+    padding: 0;
+    border: transparent;
+    background-color: transparent;
+}
+
+/*************************************************Avis*****************************************************************/
+
+[class*="nomUser"], [class*="markUser"]{
+    font-weight: bold;
+    line-height: 20px;
+}
+
+[class*="bloc-avis"] {
+    margin: 20px 0;
+}
+
+[class*="description"] {
+    text-align: justify;
+}
+
+[class*="path"]{
+    text-align: left;
+    padding-left: 10px;
+}
+
+
+
+
+[class*="lienAvis"], [class*="lienDescription"] {
+    background-color: #FAFAFA;
+    line-height: 70px;
+}
+
+/*************************************************Description**********************************************************/
+
+.caracteristique span{
+    font-weight: bold;
+}
+
+[class*="caracteristique"] {
+    margin: 20px 0 0 0;
+    text-align: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    line-height: 22px;
+}
+
+[class*="description"] {
+    margin-top: 20px;
+     text-align: justify;
+     padding-right: 15px;
+     padding-left: 15px;
+     line-height: 22px;
+ }
+
+[class*="head"] {
+      background-color: #415F9D;
+      text-align: left;
+      padding-top:7px;
+      padding-bottom: 7px;
+      padding-left: 20px;
+  }
+
+[class*="head"] [class*="col"] {
+    background-color: #415F9D;
+    color: white;
+    font-size: 20px;
+    margin:5px;
+}
+

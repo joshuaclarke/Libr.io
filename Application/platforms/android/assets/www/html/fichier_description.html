@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+
+<title>fichier description</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="../css/index.css" rel="stylesheet">
+<link href="../css/fichier.css" rel="stylesheet">
+
+<!-- app CSS -->
+<style>
+  [class*="lienDescription"]{
+    border-bottom: 2px solid black;
+    border-top:0 ;
+    border-left: 0;
+    border-right: 0;
+  }
+</style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+<body class="cbp-spmenu-push">
+
+<header class="col-xs-12 head">
+    <div class="col-xs-2"><button id="showLeft"><img src="../src/img/menu.png" /></button></div>
+    <div class="col-xs-2"><a href="../index.html"><img class="logoPrincipal" src="../src/img/logo.png" alt="libr.io"></a></div>
+    <div class="col-xs-1">Libr.io</div>
+</header>
+
+
+<nav class="menu menu-vertical menu-left" id="menu-s1">
+  <a href="../index.html"><img class="menu_link" src="../src/img/iconeAccueil.png ">Accueil</a>
+  <a href="../html/inscription.html"><img class="menu_link" src="../src/img/account.png">Inscription</a>
+  <a href="../html/connexion.html"><img class="menu_link" src="../src/img/connexion.png">Connexion</a>
+  <a href="../html/resultats.html"><img class="menu_link" src="../src/img/search.png">Themes</a>
+  <a href="../html/playlists.html"><img class="menu_link" src="../src/img/list.png">Mes playlists</a>
+  <a href="../html/proposition.html"><img class="menu_link" src="../src/img/link.png">Proposer</a>
+  <a href="../index.html#suggestion"><img class="menu_link" src="../src/img/suggestion.png">Suggestions</a>
+  <a href="../html/parametres.html"><img class="menu_link" src="../src/img/param.png">Parametrès</a>
+  <a href="../html/apropos.html"><img class="menu_link" src="../src/img/propos.png">A propos</a>
+  <a href="../html/contact.html"><img class="menu_link" src="../src/img/contact.png">Contact</a>
+</nav>
+
+
+<script src="../js/classe.js"></script>
+<script >
+    var menuLeft = document.getElementById( 'menu-s1' ),
+        showLeft = document.getElementById( 'showLeft' ),
+        body = document.body;
+
+    showLeft.onclick = function() {
+        classe.toggle( this, 'active' );
+        classe.toggle( menuLeft, 'menu-open' );
+        disableOther( 'showLeft' );
+    };
+
+    function disableOther( button ) {
+        if( button !== 'showLeft' ) {
+            classe.toggle( showLeft, 'disabled' );
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="row swip">
+    <a href="fichier_description.html">
+      <div class="col-xs-6 lienDescription">Description</div>
+    </a>
+    <a href="fichier_avis.html">
+      <div class="col-xs-6 lienAvis">Avis</div>
+    </a>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 path"><a>Path</a>><a>path</a>><a>path ...</a></div>
+  </div>
+
+  <div class="row">
+    <div id="bloc1" class="col-xs-12">
+      <div class="col-xs-2 col-xs-offset-1 note"><button><p>X/10</p></button></div>
+      <a class="col-xs-4 col-xs-offset-1 lien"><img class="imageFichier" src="../src/img/img_1.jpg" alt="img1"></a>
+      <a class="col-xs-2 col-xs-offset-1 save"><img src="../src/img/save.png" alt="sauvegarder"></a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 titreFichier"><p>Metropolis</p></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-1 etoile"></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+    <div class="col-xs-1 etoile"><button><img  src="../src/img/etoileNoire.png" /></button></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 caracteristique auteur"><span>Auteur : </span>nom</div>
+    <div class="col-xs-12 caracteristique annee"><span>Date de création : </span>19xx</div>
+    <div class="col-xs-12 caracteristique source"><span>Source : </span>nom de la source</div>
+    <div class="col-xs-12 caracteristique taille"><span>Taille : </span>octets</div>
+  </div>
+
+  <div class="row">
+    <cite class="col-xs-12 description">texte de la Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </cite>
+  </div>
+
+</div>
+</body>
+</html>
+

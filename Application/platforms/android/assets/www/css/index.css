@@ -4,14 +4,19 @@ body, html {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#EFF0F4;
     background-attachment:fixed;
-
     font-family: "HelveticaNeue", "Helvetica", "Frutiger", "Avenir",  "Arial", sans-serif;
     font-size:100%;
     height:100%;
     margin:0;
-    padding:0;
     width:100%;
     color: #303030;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
 }
 
 /*-----------------------logo menu-----------------*/
@@ -23,6 +28,10 @@ nav img {
 }
 
 /*-------------------------header-------------------*/
+header{
+    padding-right: 0;
+    padding-left: 0;
+}
 
 header ul {
     list-style-type: none;
@@ -31,9 +40,9 @@ header ul {
     background-color: #415F9D
 }
 header p{
-    font-size:15px;
+    font-size:20px;
     padding: 0;
-    margin:  15% 0 0 0;
+    margin:   0;
 }
 
 header img{
@@ -63,6 +72,9 @@ a[href="/www/index.html"]{
     padding: 0;
     margin-right: 20px;
 }
+
+
+
 /*----------------------footer-----------------------*/
 
 footer{
@@ -75,77 +87,166 @@ footer{
 
 footer h1{
     text-align: center;
+    font-size: 27px;
+    font-weight: lighter;
 }
 
 footer p{
     margin-left: 20px;
 }
+
+footer p:hover{
+    color: #FF7E67;
+}
+
 footer img{
     width:40px;
     height:40px;
 }
 
-footer li {
-    display: block;
-    color: white;
-    padding: 10px 0px;
+.lienFooter{
     text-decoration: none;
-    float:left;
+    color:whitesmoke;
 }
 
+.lienFooter:hover{
+
+}
+
+.footerClass{
+    text-decoration: none;
+    text-align: center;
+    margin:auto;
+    padding:5%;
+}
+
+div a {
+    padding:0;
+}
+
+.footerClass-logo {
+    padding:3%;
+}
 /*----------------------Browser-----------------------*/
-#browser{
-    position: relative;
-    margin: 4% 43% 0 43%;
+
+#barre{
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
-
-.tableBrowser{
-    border: none;
+#browser{
+    display: inline;
+    text-align: center;
 }
 
 fieldset{
     border: none;
 }
 
+#recherche{
+    font-size: 17pt;
+    cursor: text;
+    width: 210px;
+    height: 40px;
+}
+
 #boutonOK{
     background-color: #415F9D ;
     color: whitesmoke;
     border: none;
+    font-size: 17pt;
     cursor: pointer;
+    width: 45px;
+    height: 40px;
+}
+/*----------------------les trois boutons en dessous de la barre de recherche-----------------------*/
+[class*="logoHead"] img{
+    height: 50px;
+    width: 50px;
 }
 
+[class*="logoHead"] p{
+    background-color: transparent;
+    color: darkslategrey;
+}
+
+[class*="troisBoutons"]{
+padding-bottom: 40px;
+}
 /*----------------------recommandation-----------------------*/
-#recommandation{
-    text-align: center;
+[class*="titreReco"]{
+    font-size: 17px;
+    margin-top: 10px;
+
 }
+
+[class*="row ligneReco"] [class*="col"]{
+    padding: 5px;
+}
+[class*="row ligneReco"] p{
+    color: white ;
+    background-color: darkgrey;
+}
+
+[class*="recommendation"]{
+    background-color: #FAFAFA;
+}
+
+#reco{
+    margin-bottom: 30px;
+}
+
+.imageIndex{
+    width: 100%;
+    height: 80%;
+}
+
+.legendImg{
+    margin: 0;
+    margin-bottom: 10px;
+    color: #fafafa;
+}
+
 /*----------------------suggestion-----------------------*/
-#suggestion{
-    text-align: center;
+[class*="titreSug"]{
+    font-size: 17px;
+    margin-top: 10px;
+
 }
+
+[class*="row ligneSug"] [class*="col"]{
+    padding: 5px;
+}
+
+[class*="row ligneSug"] p{
+    color: white ;
+    background-color: darkgrey;
+}
+
+[class*="row suggestion"]{
+    background-color: #FAFAFA;
+    margin-top: 20px;
+}
+
 /*----------------------contactez-nous-----------------------*/
+[class*="contact"]{
+    padding-top: 60px;
+    padding-bottom:60px ;
+}
+
+#btnContact{
+    color: white;
+    background-color: #FF7E67;
+    border: none;
+}
+
 .contact{
     text-align: center;
-}
-
-#boutonContact{
-    background-color: #415F9D ;
-    color: whitesmoke;
-    border: none;
-    margin: 5%;
-    padding: 2% 4%;
-    cursor: pointer;
-}
-p[id="texteContact"]{
-    margin:0;
-    padding: 0;
 }
 
 /*------------------------menu-------------------------------*/
 
 /*-----defaut-------*/
-
-
 
 *,
 *:after,
@@ -162,56 +263,67 @@ a:hover {
 /*---------composantMenu---------*/
 /* General styles for all menus */
 
-.cbp-spmenu {
+.menu {
     background: #7E97C9;
     position: fixed;
+    vertical-align: middle;
+    overflow:scroll
 }
 
-.cbp-spmenu a {
+.menu a{
     display: block;
     color: #fff;
     font-size: 1.1em;
     font-weight: 300;
+    padding: 1em 2em;
     text-decoration: none;
 }
 
-.cbp-spmenu a:hover {
+.menu_link{
+    vertical-align:middle;
+}
+
+.menu a:hover {
     background: #FFFFFF;
     color: darkslategrey;
 }
 
-.cbp-spmenu a:active {
+.menu a:active {
     background: #FFFFFF;
     color: darkslategrey;
 }
 
-/* Orientation-dependent styles for the content of the menu */
+/*******menu en forground******/
 
-.cbp-spmenu-vertical {
-    width: 240px;
+.menu-vertical {
+    width: 300px;
     height: 100%;
     top: 0;
     z-index: 1000;
 }
 
-.cbp-spmenu-vertical a {
+
+
+/***bordure du menu*****/
+.menu-vertical a {
     border-bottom: 1px solid #258ecd;
     padding: 1em;
 }
 
-/* Vertical menu that slides from the left or right */
 
-.cbp-spmenu-left {
-    left: -240px;
+/* menu vertical de gauche à droite */
+
+.menu-left {
+    left: -300px;
 }
 
-.cbp-spmenu-left.cbp-spmenu-open {
+.menu-left.menu-open {
     left: 0px;
 }
 
 /* Transitions */
-.cbp-spmenu,
-.cbp-spmenu-push {
+.menu,
+.menu-push {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;

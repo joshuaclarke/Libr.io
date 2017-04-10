@@ -38,16 +38,15 @@ function toggleClass( elem, c ) {
   fn( elem, c );
 }
 
-window.classie = {
-
+window.classe = {
   hasClass: hasClass,
   addClass: addClass,
   removeClass: removeClass,
   toggleClass: toggleClass,
 
   has: hasClass,
-  add: addClass,
   remove: removeClass,
+  add: addClass,
   toggle: toggleClass
 };
 
