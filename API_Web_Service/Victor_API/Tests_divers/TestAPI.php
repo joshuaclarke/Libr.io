@@ -1,5 +1,5 @@
 <?php
-  // header('Content-Type: application/json');
+  header('Content-Type: application/json');
   function connectDb(){
       $host = 'iutdoua-web.univ-lyon1.fr'; // ou sql.hebergeur.com
       $user = 'p1612212';      // ou login
@@ -23,8 +23,17 @@
   $bdd = connectDb();
   // $query = $bdd -> prepare('select * from CONTENU where UPPER(nom)=UPPER(:search)');
   // $query = $bdd -> prepare('select * from CONTENU where :search rlike ".*"');
-  $query = $bdd -> prepare('select * from CONTENU where nom sounds like :search');
-  $query->execute(array('search' => $search )); // paramètres et exécution
+  $query = $bdd -> prepare('SELECT nom, nomAuteur, nomContenu, noteMoyenne
+FROM CONTENU
+  INNER JOIN AUTEUR
+    ON CONTENU.fkIdAuteur = AUTEUR.idAuteur
+  INNER JOIN TYPECONTENU
+    ON CONTENU.fkIdTypeContenu = TYPECONTENU.idTypeContenu
+WHERE UPPER(nom) like UPPER(\'%:search%\')
+      OR nom SOUNDS LIKE \':search'
+      OR UPPER(nomAuteur) like UPPER(\'%:search%\')
+      OR nomAuteur SOUNDS LIKE \':search\'');
+  $query->execute(array('search1' => $search,'search2' => $search,'search3' => $search,'search4' => $search )); // paramètres et exécution
   $all = [];
   while ($data = $query->fetch()) // lecture par ligne
   {

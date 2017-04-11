@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <title>Libr.io</title>
+    <script src="js/._jquery-3.2.0.slim.min.js"></script>
+</head>
+
+<body class="cbp-spmenu-push">
+
+    <header>
+        <ul>
+            <li><button id="showLeft"><img src="src/img/menu.png" /></button></li>
+            <li><a href="index.html"><img class="logoPrincipal" src="src/img/logo.png" alt="libr.io"></a></li>
+            <li><p>Libr.io</p></li>
+        </ul>
+    </header>
+
+    <nav class="menu menu-vertical menu-left" id="menu-s1">
+        <a href="index.html"><img class="menu_link" src="src/img/iconeAccueil.png ">Accueil</a>
+        <a href="html/inscription.html"><img class="menu_link" src="src/img/account.png">Inscription</a>
+        <a href="html/connexion.html"><img class="menu_link" src="src/img/connexion.png">Connexion</a>
+        <a href="html/resultats.html"><img class="menu_link" src="src/img/search.png">Themes</a>
+        <a href="html/playlists.html"><img class="menu_link" src="src/img/list.png">Mes playlists</a>
+        <a href="html/proposition.html"><img class="menu_link" src="src/img/link.png">Proposer</a>
+        <a href="index.html#suggestion"><img class="menu_link" src="src/img/suggestion.png">Suggestions</a>
+        <a href="html/parametres.html"><img class="menu_link" src="src/img/param.png">Parametrès</a>
+        <a href="html/apropos.html"><img class="menu_link" src="src/img/propos.png">A propos</a>
+        <a href="html/contact.html"><img class="menu_link" src="src/img/contact.png">Contact</a>
+    </nav>
+
+
+    <script src="js/classe.js"></script>
+    <script >
+        var menuLeft = document.getElementById( 'menu-s1' ),
+        showLeft = document.getElementById( 'showLeft' ),
+        body = document.body;
+
+    showLeft.onclick = function() {
+        classe.toggle( this, 'active' );
+        classe.toggle( menuLeft, 'menu-open' );
+        disableOther( 'showLeft' );
+    };
+
+    function disableOther( button ) {
+        if( button !== 'showLeft' ) {
+            classe.toggle( showLeft, 'disabled' );
+        }
+    }
+    </script>
+
+
+    <div id="browser">
+        <form method="post" action="">
+            <fieldset>
+                <div class="tableBrowser">
+                    <input id="recherche" type="text" name="search" />
+                    <input id="boutonOK" value="ok" class="bouton" type="submit"/>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+
+    <div id="recommandation">
+        <p>Recommandations</p>
+        <div class="flex-container">
+            <div class="flex-item"><p>flex item 1</p></div>
+            <div class="flex-item"><p>flex item 2</p></div>
+            <div class="flex-item"><p>flex item 3</p></div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item"><p>flex item 4</p></div>
+            <div class="flex-item"><p>flex item 5</p></div>
+            <div class="flex-item"><p>flex item 6</p></div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item"><p>flex item 7</p></div>
+            <div class="flex-item"><p>flex item 8</p></div>
+            <div class="flex-item"><p>flex item 9</p></div>
+        </div>
+    </div>
+
+
+    <div id="suggestion">
+        <p>Suggestion</p>
+        <div class="flex-container">
+            <div class="flex-item"><a><img class="imageIndex" src="src/img/img_1.jpg" alt="img1"><p class="legendImg">Metropolis</p></a></div>
+            <div class="flex-item"><a><img class="imageIndex" src="src/img/img_3.jpg" alt="img3"><p class="legendImg"> 2001 : l'odyssey de l'espace </p></a></div>
+
+            <div class="flex-item"><p>flex item 3</p></div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item"><a><img class="imageIndex" src="src/img/img_2.jpg" alt="img2"><p class="legendImg"> Vertigo </p></a></div>
+            <div class="flex-item"><p>flex item 5</p></div>
+            <div class="flex-item"><p>flex item 6</p></div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item"><p>flex item 7</p></div>
+            <div class="flex-item"><p>flex item 8</p></div>
+            <div class="flex-item"><p>flex item 9</p></div>
+        </div>
+    </div>
+
+
+    <div class="contact">
+        <a href="html/contact.html">
+            <button id="boutonContact"><p id="texteContact">Contactez nous !</p></button>
+        </a>
+    </div>
+
+   <footer>
+       <h1>Libr.io</h1>
+       <a class="lienFooter" href="html/parametres.html">
+           <p>Paramètres</p>
+       </a>
+       <a class="lienFooter" href="html/apropos.html">
+           <p>A propos de nous</p>
+       </a>
+       <div class="footerClass">
+               <a class="footerClass-logo" href="http://www.facebook.com"><img class="logo" src="src/img/facebook.png" alt="facebook" /></a>
+               <a class="footerClass-logo" href="http://www.twitter.com"><img class="logo" src="src/img/twitter.png" alt="twitter" /></a>
+               <a class="footerClass-logo" href=http://www..com><img class="logo" src="src/img/google.png" alt="google" /></a>
+               <a class="footerClass-logo" href=http://www.soundcloud.com><img class="logo" src="src/img/soundcloud.png" alt="soundcloud" /></a>
+       </div>
+   </footer>
+</body>
+</html>
