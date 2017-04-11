@@ -57,8 +57,20 @@ function disableOther( button ) {
 <div id="search" class="row search">
     <div class="col-xs-12">
         <div id="barre" class="row">
-            <div class="col-xs-8 col-xs-offset-1"><input id="recherche" value="recherche" type="text" name="search" /></div>
-            <div class="col-xs-2"><input id="boutonOK" value="ok" type="submit"/></div>
+            <div class="col-xs-8 col-xs-offset-1">
+                <form method="post" action="">
+                    <fieldset>
+                        <input id="recherche" value="recherche" type="text" name="search" />
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-xs-2">
+                <form method="post" action="">
+                    <fieldset>
+                        <input id="boutonOK" value="ok" type="submit"/>
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </div>
 </div>
