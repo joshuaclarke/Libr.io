@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body, html {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -8,9 +9,15 @@ body, html {
     font-size:100%;
     height:100%;
     margin:0;
-    padding:0;
     width:100%;
     color: #303030;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
 }
 
 /*-----------------------logo menu-----------------*/
@@ -22,6 +29,10 @@ nav img {
 }
 
 /*-------------------------header-------------------*/
+header{
+    padding-right: 0;
+    padding-left: 0;
+}
 
 header ul {
     list-style-type: none;
@@ -32,7 +43,7 @@ header ul {
 header p{
     font-size:20px;
     padding: 0;
-    margin:  15% 0 0 0;
+    margin:   0;
 }
 
 header img{
@@ -62,6 +73,9 @@ a[href="/www/index.html"]{
     padding: 0;
     margin-right: 20px;
 }
+
+
+
 /*----------------------footer-----------------------*/
 
 footer{
@@ -115,6 +129,12 @@ div a {
     padding:3%;
 }
 /*----------------------Browser-----------------------*/
+
+#barre{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 #browser{
     display: inline;
     text-align: center;
@@ -127,10 +147,8 @@ fieldset{
 #recherche{
     font-size: 17pt;
     cursor: text;
-    width: 210px;
+    width: 100%;
     height: 40px;
-    margin-top: 40px;
-    margin-bottom: 20px;
 }
 
 #boutonOK{
@@ -139,17 +157,50 @@ fieldset{
     border: none;
     font-size: 17pt;
     cursor: pointer;
-    width: 45px;
-    height: 40px;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+}
+/*----------------------les trois boutons en dessous de la barre de recherche-----------------------*/
+[class*="logoHead"] img{
+    height: 50px;
+    width: 50px;
 }
 
+[class*="logoHead"] p{
+    background-color: transparent;
+    color: darkslategrey;
+    line-height: 25px;
+}
+
+[class*="troisBoutons"]{
+padding-bottom: 40px;
+}
 /*----------------------recommandation-----------------------*/
+[class*="titreReco"]{
+    font-size: 17px;
+    margin-top: 10px;
+
+}
+
+[class*="row ligneReco"] [class*="col"]{
+    padding: 5px;
+}
+[class*="row ligneReco"] p{
+    color: white ;
+    background-color: darkgrey;
+}
+
+[class*="recommendation"]{
+    background-color: #FAFAFA;
+}
+
+#reco{
+    margin-bottom: 30px;
+}
+
 .imageIndex{
     width: 100%;
     height: 80%;
-    margin-bottom: 5%;
 }
 
 .legendImg{
@@ -158,69 +209,41 @@ fieldset{
     color: #fafafa;
 }
 
-
-#recommandation{
-    text-align: center;
-    list-style-type: none;
-    color: darkslategrey;
-    overflow: hidden;
-    margin:0;
-    margin-bottom: 5%;
-    background-color: #FAFAFA;
-    font-size: 15px;
-}
-
-.flex-container {
-    display: -webkit-flex;
-    width: auto;
-    height: auto;
-    background-color: #FAFAFA;
-    align-items: center;
-    justify-content: center;
-}
-
-.flex-item {
-    position:relative;
-    background-color: #415F9D;
-    width: 100px;
-    height: auto;
-    margin: 10px;
-    text-align:center;
-    valign:middle;
-
-}
 /*----------------------suggestion-----------------------*/
-#suggestion{
-    text-align: center;
-    list-style-type: none;
-    color: darkslategrey;
-    overflow: hidden;
-    margin:0;
-    background-color: #FAFAFA;
-    font-size: 100%;
+[class*="titreSug"]{
+    font-size: 17px;
+    margin-top: 10px;
+
 }
+
+[class*="row ligneSug"] [class*="col"]{
+    padding: 5px;
+}
+
+[class*="row ligneSug"] p{
+    color: white ;
+    background-color: darkgrey;
+}
+
+[class*="row suggestion"]{
+    background-color: #FAFAFA;
+    margin-top: 20px;
+}
+
 /*----------------------contactez-nous-----------------------*/
+[class*="contact"]{
+    padding-top: 60px;
+    padding-bottom:60px ;
+}
+
+#btnContact{
+    color: white;
+    background-color: #FF7E67;
+    border: none;
+}
+
 .contact{
     text-align: center;
-}
-
-#boutonContact{
-    background-color: #FF7E67 ;
-    color: whitesmoke;
-    border: none;
-    margin: 10%;
-    padding: 4% 8%;
-    cursor: pointer;
-
-}
-
-#texteContact{
-    font-size: 16px;
-}
-
-p[id="texteContact"]{
-    margin:0;
-    padding: 0;
 }
 
 /*------------------------menu-------------------------------*/
@@ -272,7 +295,7 @@ a:hover {
     color: darkslategrey;
 }
 
-/* Orientation-dependent styles for the content of the menu */
+/*******menu en forground******/
 
 .menu-vertical {
     width: 300px;
@@ -281,12 +304,16 @@ a:hover {
     z-index: 1000;
 }
 
+
+
+/***bordure du menu*****/
 .menu-vertical a {
     border-bottom: 1px solid #258ecd;
     padding: 1em;
 }
 
-/* Vertical menu that slides from the left or right */
+
+/* menu vertical de gauche à droite */
 
 .menu-left {
     left: -300px;
@@ -302,33 +329,340 @@ a:hover {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
+=======
+
+
+body, html {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#EFF0F4;
+    background-attachment:fixed;
+    font-family: "HelveticaNeue", "Helvetica", "Frutiger", "Avenir",  "Arial", sans-serif;
+    font-size:100%;
+    height:100%;
+    margin:0;
+    width:100%;
+    color: #303030;
 }
 
-input[type=text] {
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+/*-----------------------logo menu-----------------*/
+nav img {
+    width:35px;
+    height:35px;
+    margin-left: 20px;
+    margin-right: 35px;
+}
+
+/*-------------------------header-------------------*/
+header{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+header ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin:0;
+    background-color: #415F9D
+}
+header p{
+    font-size:20px;
+    padding: 0;
+    margin:   0;
+}
+
+header img{
+    width:35px;
+    height:35px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+header li {
+    display: block;
+    color: white;
+    padding: 10px 0px;
+    text-decoration: none;
+    float:left;
+}
+
+button[id="showLeft"]{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin:  0;
+    margin-right: 30%;
+}
+
+a[href="/www/index.html"]{
+    padding: 0;
+    margin-right: 20px;
+}
+
+
+
+/*----------------------footer-----------------------*/
+
+footer{
+    list-style-type: none;
+    color: whitesmoke;
+    overflow: hidden;
+    margin:0;
+    background-color: #233B6E;
+}
+
+footer h1{
+    text-align: center;
+    font-size: 27px;
+    font-weight: lighter;
+}
+
+footer p{
+    margin-left: 20px;
+}
+
+footer p:hover{
+    color: #FF7E67;
+}
+
+footer img{
+    width:40px;
+    height:40px;
+}
+
+.lienFooter{
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+.lienFooter:hover{
+
+}
+
+.footerClass{
+    text-decoration: none;
+    text-align: center;
+    margin:auto;
+    padding:5%;
+}
+
+div a {
+    padding:0;
+}
+
+.footerClass-logo {
+    padding:3%;
+}
+/*----------------------Browser-----------------------*/
+
+
+
+#barre{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#browser{
+    display: inline;
+    text-align: center;
+}
+
+fieldset{
+    border: none;
+}
+
+#recherche{
+    font-size: 17pt;
+    cursor: text;
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    height: 40px;
+}
+
+#boutonOK{
+    background-color: #415F9D ;
+    color: whitesmoke;
+    border: none;
+    font-size: 17pt;
+    cursor: pointer;
+    width: 11%;
+    height: 10%;
+}
+/*----------------------les trois boutons en dessous de la barre de recherche-----------------------*/
+[class*="logoHead"] img{
+    height: 50px;
+    width: 50px;
+}
+
+[class*="logoHead"] p{
+    background-color: transparent;
+    color: darkslategrey;
+    line-height: 25px;
+}
+
+[class*="troisBoutons"]{
+padding-bottom: 40px;
+}
+/*----------------------recommandation-----------------------*/
+[class*="titreReco"]{
+    font-size: 17px;
+    margin-top: 10px;
+
+}
+
+[class*="row ligneReco"] [class*="col"]{
+    padding: 5px;
+}
+[class*="row ligneReco"] p{
+    color: white ;
+    background-color: darkgrey;
+}
+
+[class*="recommendation"]{
+    background-color: #FAFAFA;
+}
+
+#reco{
+    margin-bottom: 30px;
+}
+
+.imageIndex{
+    width: 100%;
+    height: 80%;
+}
+
+.legendImg{
+    margin: 0;
+    margin-bottom: 10px;
+    color: #fafafa;
+}
+
+/*----------------------suggestion-----------------------*/
+[class*="titreSug"]{
+    font-size: 17px;
+    margin-top: 10px;
+
+}
+
+[class*="row ligneSug"] [class*="col"]{
+    padding: 5px;
+}
+
+[class*="row ligneSug"] p{
+    color: white ;
+    background-color: darkgrey;
+}
+
+[class*="row suggestion"]{
+    background-color: #FAFAFA;
+    margin-top: 20px;
+}
+
+/*----------------------contactez-nous-----------------------*/
+[class*="contact"]{
+    padding-top: 60px;
+    padding-bottom:60px ;
+}
+
+#btnContact{
+    color: white;
+    background-color: #FF7E67;
+    border: none;
+}
+
+.contact{
+    text-align: center;
+}
+
+/*------------------------menu-------------------------------*/
+
+/*-----defaut-------*/
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+a:hover {
+    color: #000;
 }
 
-input[type=submit]:hover {
-    background-color: #45a049;
+/*---------composantMenu---------*/
+/* General styles for all menus */
+
+.menu {
+    background: #7E97C9;
+    position: fixed;
+    vertical-align: middle;
+    overflow:scroll
 }
 
-.inscriptionValidation {
+.menu a{
+    display: block;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 300;
+    padding: 1em 2em;
+    text-decoration: none;
+}
 
+.menu_link{
+    vertical-align:middle;
+}
+
+.menu a:hover {
+    background: #FFFFFF;
+    color: darkslategrey;
+}
+
+.menu a:active {
+    background: #FFFFFF;
+    color: darkslategrey;
+}
+
+/*******menu en forground******/
+
+.menu-vertical {
+    width: 300px;
+    height: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+/***bordure du menu*****/
+.menu-vertical a {
+    border-bottom: 1px solid #258ecd;
+    padding: 1em;
+}
+
+
+/* menu vertical de gauche à droite */
+
+.menu-left {
+    left: -300px;
+}
+
+.menu-left.menu-open {
+    left: 0px;
+}
+
+/* Transitions */
+.menu,
+.menu-push {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+>>>>>>> dd74f86193e01bdadee1c96e962eb37e586a5bdb
 }
