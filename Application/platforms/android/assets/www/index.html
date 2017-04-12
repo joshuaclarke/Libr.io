@@ -58,19 +58,22 @@ function disableOther( button ) {
 
    <div class="col-xs-12">
        <div id="barre" class="row">
-           <div class="col-xs-8 col-xs-offset-1">
+
                <form method="get" action="html/resultats.html">
                    <fieldset>
-                       <input id="recherche" placeholder="recherche" type="text" name="search" />
+                       <div class="row recherche">
+                           <div class="col-xs-8 col-xs-offset-1">
+                                <input id="recherche" placeholder="recherche" type="text" name="search" />
+                           </div>
+                           <div class="col-xs-2">
+                                <input id="boutonOK" value="ok" type="submit" name="search"/>
+                           </div>
+                       </div>
                    </fieldset>
                </form>
-           </div>
+
            <div class="col-xs-2">
-               <form method="post" action="">
-                   <fieldset>
-                       <input id="boutonOK" value="ok" type="submit"/>
-                   </fieldset>
-               </form>
+
            </div>
        </div>
    </div>

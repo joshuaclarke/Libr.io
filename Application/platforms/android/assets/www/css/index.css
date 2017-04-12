@@ -147,7 +147,7 @@ fieldset{
 #recherche{
     font-size: 17pt;
     cursor: text;
-    width: 210px;
+    width: 100%;
     height: 40px;
 }
 
@@ -157,8 +157,8 @@ fieldset{
     border: none;
     font-size: 17pt;
     cursor: pointer;
-    width: 45px;
-    height: 40px;
+    width: 100%;
+    height: 100%;
 }
 /*----------------------les trois boutons en dessous de la barre de recherche-----------------------*/
 [class*="logoHead"] img{
@@ -330,6 +330,8 @@ a:hover {
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
 =======
+
+
 body, html {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -461,6 +463,8 @@ div a {
 }
 /*----------------------Browser-----------------------*/
 
+
+
 #barre{
     padding-top: 60px;
     padding-bottom: 60px;
@@ -478,7 +482,7 @@ fieldset{
 #recherche{
     font-size: 17pt;
     cursor: text;
-    width: 210px;
+    width: 100%;
     height: 40px;
 }
 
@@ -488,8 +492,8 @@ fieldset{
     border: none;
     font-size: 17pt;
     cursor: pointer;
-    width: 45px;
-    height: 40px;
+    width: 11%;
+    height: 10%;
 }
 /*----------------------les trois boutons en dessous de la barre de recherche-----------------------*/
 [class*="logoHead"] img{
