@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/cssResultats.css">
   <script src="script.js"></script>
 </head>
-<body>
+<body onload="loadDoc()">
   <div class="corps">
     <header>
       <ul>
@@ -15,7 +15,7 @@
         <li><a href="../index.html"><img class="logoPrincipal" src="../src/img/logo.png" alt="libr.io"></a></li>
       </ul>
     </header>
-	
+
 	<nav class="menu menu-vertical menu-left" id="menu-s1">
         <a href="index.html"><img class="menu_link" src="../src/img/iconeAccueil.png ">Accueil</a>
         <a href="html/resultats.html"><img class="menu_link" src="../src/img/search.png">Themes</a>
@@ -33,12 +33,12 @@
 		<img src="../src/img/resultats/texte.png">
 		<img src="../src/img/resultats/image.png">
 	</section>
-	
+
 	<section id="filtreEtTri">
 		<span class="boutonFiltreEtTri">Filtrer</span>
 		<span class="boutonFiltreEtTri">Trier</span>
 	</section>
-	
+
 	<section id="filtres"> <!-- non visible par défaut -->
 		<div>
 			<strong>Taille</strong>
@@ -54,7 +54,7 @@
 			</input>
 		</div>
 	</section>
-	
+
 	<section id="tris"> <!-- non visible par défaut -->
 			<div>
 				<strong>Trier</strong>
@@ -68,6 +68,7 @@
 				</input>
 			</div>
 	</section>
+<<<<<<< HEAD
 		
 		
 	<p class="nombreResultats">XX résultats trouvés</p> <!-- partie dynamique en php -->
@@ -85,8 +86,52 @@
 			</span>	
 		</div>
 	</section>
+=======
+
+
+	<p id="nombreResultats">XX résultats trouvés</p> <!-- partie dynamique en php -->
+
+  <div id="resultats">
+
+>>>>>>> f17be630d4162c6c9788c00b83b72728fb053e8d
   </div>
-  
+</div>
+
+
+  <script>
+  function findGetParameter(parameterName) {
+    var result = null,
+    tmp = [];
+    var items = location.search.substr(1).split("&");
+    for (var index = 0; index < items.length; index++) {
+      tmp = items[index].split("=");
+      if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+    }
+    return result;
+  }
+    function loadDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+        }
+      };
+      xhttp.open("GET", "http://iutdoua-web.univ-lyon1.fr/~p1612444/API.php?titleSearch="+findGetParameter('search'), true);
+      // http://iutdoua-web.univ-lyon1.fr/~p1612444/index.php?search=
+      xhttp.send();
+    }
+    function myFunction(reponse) {
+
+        var livres = JSON.parse(reponse.responseText);
+        var affichage="";
+        for(var i=0; i<livres.length; i++) {
+          affichage+='<section class="listeResultats"><div classe="unResultat"><strong class="numResultat">'+i+'</strong><img src="'+livres[i].image+'"></img><span class="description"><h1 class="titre"><strong>Titre :</strong>'+livres[i].nom+'</h1><h2 class="titre original"></h2><h3 class="annee"><strong>Annee :'+livres[i].dateCree+'</h3><h3 class="auteur"><strong>Auteur :</strong>'+livres[i].auteur+'</h3><p class="synopsis">'+livres[i].description+'</p></span></div></section>';
+        }
+        document.getElementById("resultats").innerHTML = affichage;
+        document.getElementById("nombreResultats").innerHTML = livres.length+" résultats trouvés";
+    }
+  </script>
+
  <footer>
        <h1>Libr.io</h1>
        <a class="lienFooter" href="html/parametres.html">
