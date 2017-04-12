@@ -1,0 +1,64 @@
+#typesFichier img, span
+{
+	width:50px;
+    height:50px;
+    margin-left: 20px;
+    margin-right: 35px;
+	vertical-align:middle;
+	
+}
+
+#typesFichier 
+{
+	margin-top: 20px;
+	marin-bottom: 50px;
+}
+
+
+#filtreEtTri *
+{
+    width:50px;
+    height:50px;
+	margin:  100px;
+    margin-right: 100px;
+	margin-left: 100px;
+}
+
+#filtreEtTri
+{
+    height:50px;
+	margin:  20px;
+	margin-top : 35px;
+}
+
+#filtres, #tris, .nombreResultats
+{
+	margin:  15px;
+}
+
+.unResultat strong, span
+{
+	vertical-align:middle;
+	/*ça marche pas : on ne peut pas mettre d'éléments blocks dans du inline.
+ 	 Or j'ai des h1.*/
+}
+
+.unResultat img
+{
+	display: block;
+
+}
+
+.unResultat strong
+{
+		display: block;
+		float:left;
+		
+}
+
+.unResultat div
+{
+	display: block;
+	float:right;
+}
+
