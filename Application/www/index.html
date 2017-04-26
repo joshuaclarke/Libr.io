@@ -12,7 +12,7 @@
     <script src="js/._jquery-3.2.0.slim.min.js"></script>
 </head>
 
-<body class="cbp-spmenu-push">
+<body>
 
 <header class="col-xs-12 head">
     <div class="col-xs-2"><button id="showLeft"><img src="src/img/menu.png" /></button></div>
@@ -23,7 +23,6 @@
 <nav class="menu menu-vertical menu-left" id="menu-s1">
     <a href="index.html"><img class="menu_link" src="src/img/iconeAccueil.png ">Accueil</a>
     <a href="html/inscription.html"><img class="menu_link" src="src/img/account.png">Inscription</a>
-    <a href="html/connexion.html"><img class="menu_link" src="src/img/connexion.png">Connexion</a>
     <a href="html/resultats.html"><img class="menu_link" src="src/img/search.png">Themes</a>
     <a href="html/playlists.html"><img class="menu_link" src="src/img/list.png">Mes playlists</a>
     <a href="html/proposition.html"><img class="menu_link" src="src/img/link.png">Proposer</a>
@@ -33,25 +32,9 @@
     <a href="html/contact.html"><img class="menu_link" src="src/img/contact.png">Contact</a>
 </nav>
 
-
 <script src="js/classe.js"></script>
-<script >
-    var menuLeft = document.getElementById( 'menu-s1' ),
-    showLeft = document.getElementById( 'showLeft' ),
-    body = document.body;
 
-showLeft.onclick = function() {
-    classe.toggle( this, 'active' );
-    classe.toggle( menuLeft, 'menu-open' );
-    disableOther( 'showLeft' );
-};
 
-function disableOther( button ) {
-    if( button !== 'showLeft' ) {
-        classe.toggle( showLeft, 'disabled' );
-    }
-}
-</script>
 
 
 <div id="search" class="row search">

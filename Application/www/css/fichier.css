@@ -126,12 +126,10 @@ button{
     text-align: justify;
 }
 
-[class*="path"]{
+[class*="path"] {
     text-align: left;
     padding-left: 10px;
 }
-
-
 
 
 [class*="lienAvis"], [class*="lienDescription"] {
