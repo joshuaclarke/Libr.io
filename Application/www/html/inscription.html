@@ -55,21 +55,21 @@
     		<div>
                 <h1>Inscription</h1>
                 <div>
-                  <form action="/action_page.php">
+                  <form action="../../../API_2.0/?p=User/subscribe" method="post">
                     <label for="identifiant">Identifiant</label>
-                    <input type="text" name="identifiant" placeholder="renseignez ici...">
+                    <input type="text" name="pseudo" placeholder="renseignez ici...">
 
                     <label for="motdepasse">Mot de passe</label>
-                    <input type="password" name="motdepasse">
+                    <input type="password" name="pw">
 
                     <label for="motdepasseConf">Confirmez votre mot de passe</label>
-                    <input type="password" name="motdepasse">
+                    <input type="password" name="pw2">
 
                     <label for="adresseMail">Adresse mail</label>
-                    <input type="text" name="adresseMail">
+                    <input type="text" name="mail">
 
                     <label for="adresseMailConf">Confirmation mail</label>
-                    <input type="text" name="adresseMailConf">
+                    <input type="text" name="mail2">
 
                     <input type="submit" value="Envoyer">
                   </form>
