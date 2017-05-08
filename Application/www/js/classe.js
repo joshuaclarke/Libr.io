@@ -1,4 +1,4 @@
-/*Ce code s'inspire d'une ressource de code javascript du site internet tympanus hébergeant des codes réutilisables librement :
+/*Ce code s'inspire d'une ressource de code javascript du site internet tympanus hébergeant des codes réutilisables librement. Voici leur licence et termes d'utilisation :
 "Licensing & Terms of Use
 
  The resources on Codrops can be used freely in personal and commercial projects.
@@ -7,6 +7,7 @@
 
  The resources on Codrops can be used in websites, web apps and web templates intended for sale.
  You don’t have to link back to us if it vitiates your work but we appreciate any credit."
+ 
  lien des termes de la licence : https://tympanus.net/codrops/licensing
 
  lien du code : https://tympanus.net/codrops/2013/04/17/slide-and-push-menus/
