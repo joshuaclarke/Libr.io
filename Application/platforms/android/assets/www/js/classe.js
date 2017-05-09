@@ -1,3 +1,18 @@
+/*Ce code s'inspire d'une ressource de code javascript du site internet tympanus hébergeant des codes réutilisables librement. Voici leur licence et termes d'utilisation :
+"Licensing & Terms of Use
+
+ The resources on Codrops can be used freely in personal and commercial projects.
+ Please note, that most of the tutorials and resources are experimental and not ready for production,
+ but made for inspiration and demonstration purpose only.
+
+ The resources on Codrops can be used in websites, web apps and web templates intended for sale.
+ You don’t have to link back to us if it vitiates your work but we appreciate any credit."
+ 
+ lien des termes de la licence : https://tympanus.net/codrops/licensing
+
+ lien du code : https://tympanus.net/codrops/2013/04/17/slide-and-push-menus/
+ */
+
 ( function( window ) {
 
 'use strict';
@@ -19,19 +34,6 @@ if ( 'classList' in document.documentElement ) {
     elem.classList.remove( c );
   };
 }
-else {
-  hasClass = function( elem, c ) {
-    return classReg( c ).test( elem.className );
-  };
-  addClass = function( elem, c ) {
-    if ( !hasClass( elem, c ) ) {
-      elem.className = elem.className + ' ' + c;
-    }
-  };
-  removeClass = function( elem, c ) {
-    elem.className = elem.className.replace( classReg( c ), ' ' );
-  };
-}
 
 function toggleClass( elem, c ) {
   var fn = hasClass( elem, c ) ? removeClass : addClass;
@@ -51,3 +53,20 @@ window.classe = {
 };
 
 })( window );
+
+
+var menuLeft = document.getElementById( 'menu-s1' ),
+    showLeft = document.getElementById( 'showLeft' ),
+    body = document.body;
+
+showLeft.onclick = function() {
+    classe.toggle( this, 'active' );
+    classe.toggle( menuLeft, 'menu-open' );
+    disableOther( 'showLeft' );
+};
+
+function disableOther( button ) {
+    if( button !== 'showLeft' ) {
+        classe.toggle( showLeft, 'disabled' );
+    }
+}
