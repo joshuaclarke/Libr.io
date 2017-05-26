@@ -9,10 +9,9 @@
 
 
     <title>Libr.io</title>
-    <script src="js/._jquery-3.2.0.slim.min.js"></script>
 </head>
 
-<body>
+<body onload="loadDoc()">
 
 <header class="col-xs-12 head">
     <div class="col-xs-2"><button id="showLeft"><img src="src/img/menu.png" /></button></div>
@@ -154,5 +153,33 @@
         <a class="footerClass-logo" href=http://www.soundcloud.com><img class="logo" src="src/img/soundcloud.png" alt="soundcloud" /></a>
     </div>
 </footer>
+<script>
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+      }
+    };
+    xhttp.open("GET", "http://iutdoua-web.univ-lyon1.fr/~p1612444/API_2.0/index.php?p=Home/topTen", true);
+    xhttp.send();
+  }
+  function myFunction(reponse) {
+      var livres = JSON.parse(reponse.responseText);
+      var affichage='<div class="col-xs-12">'+
+          '<div class="row">'+
+              '<div class="col-xs-12 titreReco">Recommendations</div>'+
+          '</div>';
+      for(var doc=0;doc<livres.length-1;doc+=3){
+        affichage+='<div class="row ligneReco">';
+        for(var i=doc; i<doc+3; i++) {
+          affichage+='<div class="col-xs-4"><a><img class="imageIndex" src="'+livres[i].image+'" alt="img1"><p class="legendImg">'+livres[i].nom+'</p></a></div>';
+        }
+        affichage+='</div>';
+      }
+      affichage+='</div>';
+      document.getElementById("reco").innerHTML = affichage;
+  }
+</script>
 </body>
 </html>
