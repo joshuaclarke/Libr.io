@@ -9,7 +9,7 @@
     <link href="../css/fichier.css" rel="stylesheet">
   <script src="script.js"></script>
 </head>
-    
+
 
 <body class="cbp-spmenu-push" onload="loadDoc()">
 
@@ -53,7 +53,7 @@
     }
 </script>
 
-      
+
     <div class="container">
         <div class="row">
             <div class="col-xs_12">
@@ -64,11 +64,11 @@
             </div>
         </div>
     </div>
-      
+
   <div class="row">
     <div class="col-xs-12 path"><a> menu </a>><a> recherche </a>><a> fichier </a></div>
   </div>
-      
+
     <div class="container">
         <div class="row">
             <div class="col-xs_12">
@@ -79,7 +79,7 @@
     </div>
 
 
-    
+
 <div class="container">
     </br>
 	<p id="nombreResultats">XX résultats trouvés</p> <!-- partie dynamique en php -->
@@ -107,25 +107,29 @@
         myFunction(this);
         }
       };
-      xhttp.open("GET", "http://iutdoua-web.univ-lyon1.fr/~p1612444/API.php?titleSearch="+findGetParameter('search'), true);
-      // http://iutdoua-web.univ-lyon1.fr/~p1612444/index.php?search=
+      xhttp.open("GET", "http://iutdoua-web.univ-lyon1.fr/~p1612444/API_2.0/index.php?p=Search/searchAll/"+findGetParameter('search'), true);
       xhttp.send();
     }
     function myFunction(reponse) {
-
-        var livres = JSON.parse(reponse.responseText);
+        var livres = JSON.parse(reponse.responseText)[0];
         var affichage="";
         for(var i=0; i<livres.length; i++) {
-            
-          affichage+='<div class="row fichierRes"><div class="col-xs-12">                                                                    <div class="col-xs-3"><img class="imageFichierRes" src="'+livres[i].image+'" alt="img1"></div>                                                                                                                                                                            <p class="caract"><span>Titre : </span>'+livres[i].nom+'</p>                                                                         <p class="caract">  <span>Auteur : </span>'+livres[i].auteur+'</p>                                                                   <p class="caract"><span>Date de création : </span>'+livres[i].dateCree+'</p>                                                        <p class="caract"><span>Source : </span>nom de la source</p>                                                                          <p class="caract"><span>Taille : </span>octets</p></div>                                                                           <div class="col-xs-12 blockIco">                                                                                                      <p class="descRes">'+livres[i].nom+' '+livres[i].description+'</p></div></div>'
+          affichage+='<div class="row fichierRes"><div class="col-xs-12">'+
+          '<div class="col-xs-3"><img class="imageFichierRes" src="'+livres[i].image+'" alt="img1"></div>'+
+           '<p class="caract"><span>Titre : </span>'+livres[i].nom+'</p>'+
+           '<p class="caract">  <span>Auteur : </span>'+livres[i].auteur+'</p>'+
+           '<p class="caract"><span>Date de création : </span>'+livres[i].dateCree+'</p>'+
+           '<p class="caract"><span>Source : </span>nom de la source</p>'+
+           '<p class="caract"><span>Taille : </span>octets</p></div>'+
+           '<div class="col-xs-12 blockIco"> <p class="descRes">'+livres[i].nom+' '+livres[i].description+'</p></div></div>';
         }
         document.getElementById("resultats").innerHTML = affichage;
         document.getElementById("nombreResultats").innerHTML = livres.length+" résultats trouvés";
     }
   </script>
 
-    
-    
+
+
 
  <footer>
        <h1>Libr.io</h1>
@@ -145,6 +149,3 @@
 
 </body>
 </html>
-
-
-
