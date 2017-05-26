@@ -173,7 +173,7 @@
       for(var doc=0;doc<livres.length-1;doc+=3){
         affichage+='<div class="row ligneReco">';
         for(var i=doc; i<doc+3; i++) {
-          affichage+='<div class="col-xs-4"><a><img class="imageIndex" src="'+livres[i].image+'" alt="img1"><p class="legendImg">'+livres[i].nom+'</p></a></div>';
+          affichage+='<div class="col-xs-4"><a href="html/fichier_description.html?get='+livres[i].idContenu+'"><img class="imageIndex" src="'+livres[i].image+'" alt="img1"><p class="legendImg">'+livres[i].nom+'</p></a></div>';
         }
         affichage+='</div>';
       }

@@ -114,14 +114,14 @@
         var livres = JSON.parse(reponse.responseText)[0];
         var affichage="";
         for(var i=0; i<livres.length; i++) {
-          affichage+='<div class="row fichierRes"><div class="col-xs-12">'+
+          affichage+='<div class="row fichierRes"><div class="col-xs-12"><a href="fichier_description.html?get='+livres[i].idContenu+'">'+
           '<div class="col-xs-3"><img class="imageFichierRes" src="'+livres[i].image+'" alt="img1"></div>'+
            '<p class="caract"><span>Titre : </span>'+livres[i].nom+'</p>'+
            '<p class="caract">  <span>Auteur : </span>'+livres[i].auteur+'</p>'+
            '<p class="caract"><span>Date de création : </span>'+livres[i].dateCree+'</p>'+
            '<p class="caract"><span>Source : </span>nom de la source</p>'+
            '<p class="caract"><span>Taille : </span>octets</p></div>'+
-           '<div class="col-xs-12 blockIco"> <p class="descRes">'+livres[i].nom+' '+livres[i].description+'</p></div></div>';
+           '<div class="col-xs-12 blockIco"> <p class="descRes">'+livres[i].nom+' '+livres[i].description+'</p></div></a></div>';
         }
         document.getElementById("resultats").innerHTML = affichage;
         document.getElementById("nombreResultats").innerHTML = livres.length+" résultats trouvés";

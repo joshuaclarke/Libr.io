@@ -32,6 +32,15 @@ class Search
         echo json_encode($tabAuteur);
     }
 
+    public function searchById($id)
+    {
+      $contenu = new Contenu();
+      //echo $contenu->getById($id);
+      echo json_encode($contenu->getById($id));
+    }
+
+
+
 
 
 }
