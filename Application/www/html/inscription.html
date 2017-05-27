@@ -9,7 +9,7 @@
     <title>Libr.io</title>
 </head>
 
-<body class="cbp-spmenu-push">
+<body class="cbp-spmenu-push" on="envoi()">
 
     <header>
         <ul>
@@ -55,7 +55,7 @@
     		<div>
                 <h1>Inscription</h1>
                 <div>
-                  <form action="../../../API_2.0/?p=User/subscribe" method="post">
+                  <form method="post">
                     <label for="identifiant">Identifiant</label>
                     <input type="text" name="pseudo" placeholder="renseignez ici...">
 
@@ -71,7 +71,7 @@
                     <label for="adresseMailConf">Confirmation mail</label>
                     <input type="text" name="mail2">
 
-                    <input type="submit" value="Envoyer">
+                    <input onclick="envoi()" type="submit" value="Envoyer">
                   </form>
                 </div>
                 <div class="inscriptionValidation">
@@ -111,5 +111,34 @@
                <a href=http://www.soundcloud.com><img class="logo" src="../src/img/soundcloud.png" alt="soundcloud" /></a>
        </div>
    </footer>
+
+   <script>
+   function reception(reponse){
+     alert("plop");
+   }
+   function loadDoc(pseudo,pw1,pw2,mail1,mail2) {
+     var xhttp = new XMLHttpRequest();
+     xhttp.onreadystatechange = function() {
+       if (this.readyState == 4 && this.status == 200) {
+         reception(this);
+       }
+     };
+     xhttp.open("POST", "http://localhost:8000/index.php?p=User/subscribe", true);
+     xhttp.send("pseudo="+pseudo+"&"+
+                "pw="+pw1+"&"+
+                "pw2="+pw2+"&"+
+                "mail="+mail1+"&"+
+                "mail2="+mail2);
+   }
+    function envoi(){
+      var pseudo=document.getElementsByName('pseudo')[0].value;
+      var pw1=document.getElementsByName('pw')[0].value;
+      var pw2=document.getElementsByName('pw2')[0].value;
+      var mail1=document.getElementsByName('mail')[0].value;
+      var mail2=document.getElementsByName('mail2')[0].value;
+      loadDoc(pseudo,pw1,pw2,mail1,mail2);
+    }
+   </script
+
 </body>
 </html>

@@ -8,6 +8,7 @@
 
 require_once (ROOT."/model/connectDB.php");
 require_once (ROOT."model/Utilisateur.php");
+require_once (ROOT."model/Model.php");
 
 class UtilisateurRepo implements Model
 {
