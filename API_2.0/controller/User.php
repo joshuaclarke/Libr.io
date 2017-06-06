@@ -6,10 +6,10 @@
  *    Victor LAURENT 11409577
  */
 
-require_once(ROOT.'/model/Utlisateur.php');
-require_once(ROOT.'/model/UtlisateurRepo.php');
+require_once (ROOT.'/model/Utilisateur.php');
+require_once (ROOT.'/model/UtilisateurRepo.php');
 
-class Users
+class User
 {
     public function conection()
     {
