@@ -1,0 +1,67 @@
+[class*="icoRes"]{
+    height: 20px;
+    width: 20px;
+}
+
+[class*="blockIco"]{
+    line-height: 40px;
+    text-align: center;
+    background-color:#FAFAFA;
+}
+
+[class*="blockIco"]:hover, [class*="blockIco"]:active{
+    background-color:white;
+}
+
+[class*="blockFT"]{
+    line-height: 40px;
+    text-align: center;
+    background-color:#415F9D;
+    border: 3px solid #415F9D;
+    vertical-align: middle
+}
+
+[class*="blockFT"] p{
+    margin:0;
+    color:white;
+}
+
+[class*="blockFT"] p:hover, [class*="blockFT"] p:active{
+    color:#415F9D;
+}
+
+[class*="blockFT"]:hover, [class*="blockFT"]:active{
+    background-color:white;
+    border: 3px solid #415F9D;
+    color:#415F9D;
+}
+
+[class*="imageFichierRes"]{
+    height: 120px;
+    width: 100%;
+}
+
+[class*="marginImg"]{
+    margin-right: 10px;
+}
+
+[class*="descRes"]{
+    margin-top:0;
+    padding :7px;
+    line-height: normal;
+    text-align: justify;
+}
+
+
+.caract span{
+    font-weight: bold;
+}
+
+[class*="caract"]{
+    text-align: left;
+    line-height: 23px;
+}
+
+[class*="fichierRes"]{
+    padding-top:30px;
+}

@@ -20,6 +20,12 @@ a:hover{
     text-decoration: none;
 }
 
+/*
+[class*="col-"]{
+    border: 1px solid black;
+}*/
+
+
 /*-----------------------logo menu-----------------*/
 nav img {
     width:35px;
