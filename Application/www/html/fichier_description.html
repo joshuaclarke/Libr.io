@@ -168,6 +168,9 @@
     <cite class="col-xs-12 description" id="description">texte de la Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum </cite>
   </div>
 
+  <div id="media">
+  </div>
+
 
 </div>
 <script>
@@ -196,7 +199,17 @@ function myFunction(reponse) {
     document.getElementById("description").innerHTML = livre.description;
     document.getElementById("image").src = livre.image;
     document.getElementById("titre").innerHTML = livre.nom;
+    document.getElementById("media").innerHTML='<audio controls="controls">'+
+            '<source src="'+livre.url+'" type="audio/ogg" />'+
+                '</audio>';
 }
+
+document.addEventListener('deviceready', function () {
+    // cordova.plugins.SitewaertsDocumentViewer is now available
+    url=
+    cordova.plugins.SitewaertsDocumentViewer.viewDocument(
+    url, mimeType, options, onShow, onClose, onMissingApp, onError, linkHandlers);
+}, false);
 </script>
 </body>
 </html>

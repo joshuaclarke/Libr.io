@@ -1,77 +1,120 @@
 <?php
 require_once("connexion_bdd.php");
 
-libxml_use_internal_errors(true);
-
-$xml = simplexml_load_file("https://framabookin.org/b/opds/newest/");
-
 $bdd = connectDb();
 
+$url = 'http://api.jamendo.com/v3.0/tracks/?client_id=709fa152';
+$content = file_get_contents($url);
+$json = json_decode($content, true);
 
-// INSERTION DE LA LICENCE
-$licence='Domaine Public';
-$query = $bdd->prepare('SELECT COUNT(*) FROM LICENSE WHERE nomLicence=?'); // requête SQL
-$query->execute(array($licence)); // paramètres et exécution
-if($query->fetch()['COUNT(*)']==0){
-  $query = $bdd->prepare('INSERT INTO LICENSE(nomLicence) VALUES(?)'); // requête SQL
+foreach($json['results'] as $item) {
+    $licence=$item['license_ccurl'];
+    $type='Musique';
+    $nom=$item['name'];
+    $description="";
+    $url=$item['audio'];
+    $auteur=$item['artist_name'];
+    $image=$item['album_image'];
+    $cat =  array();
+    $cat[0]=$cat[1]=$cat[2]="Musique";
+
+    update($bdd,$licence,$type,$nom,$description,$url,$auteur,$image,$cat);
+    print "<img src='".$image."'/>'";
+}
+
+function update($bdd,$licence,$type,$nom,$description,$url,$auteur,$image,$cat){
+  $query = $bdd->prepare('SELECT COUNT(*) FROM LICENSE WHERE nomLicence=?'); // requête SQL
   $query->execute(array($licence)); // paramètres et exécution
+  if($query->fetch()['COUNT(*)']==0){
+    $query = $bdd->prepare('INSERT INTO LICENSE(nomLicence) VALUES(?)'); // requête SQL
+    $query->execute(array($licence)); // paramètres et exécution
+    $query->closeCursor();
+  }
+  $query = $bdd->prepare('SELECT idLicense FROM LICENSE WHERE nomLicence=?'); // requête SQL
+  $query->execute(array($licence)); // paramètres et exécution
+  $idLicense=$query->fetch()['idLicense'];
   $query->closeCursor();
-}
-$query = $bdd->prepare('SELECT idLicense FROM LICENSE WHERE nomLicence=?'); // requête SQL
-$query->execute(array($licence)); // paramètres et exécution
-$idLicense=$query->fetch()['idLicense'];
-echo $idLicense;
-$query->closeCursor();
 
-//INSERTION DU TYPE DE CONTENU
-$type='Livre';
-$query = $bdd->prepare('SELECT COUNT(*) FROM TYPECONTENU WHERE nomContenu=?'); // requête SQL
-$query->execute(array($type)); // paramètres et exécution
-if($query->fetch()['COUNT(*)']==0){
-  $query = $bdd->prepare('INSERT INTO TYPECONTENU(nomContenu) VALUES(?)'); // requête SQL
+  //INSERTION DU TYPE DE CONTENU
+  $query = $bdd->prepare('SELECT COUNT(*) FROM TYPECONTENU WHERE nomContenu=?'); // requête SQL
   $query->execute(array($type)); // paramètres et exécution
+  if($query->fetch()['COUNT(*)']==0){
+    $query = $bdd->prepare('INSERT INTO TYPECONTENU(nomContenu) VALUES(?)'); // requête SQL
+    $query->execute(array($type)); // paramètres et exécution
+    $query->closeCursor();
+  }
+  $query = $bdd->prepare('SELECT idTypeContenu FROM TYPECONTENU WHERE nomContenu=?'); // requête SQL
+  $query->execute(array($type)); // paramètres et exécution
+  $fkIdTypeContenu=$query->fetch()['idTypeContenu'];
+  echo $fkIdTypeContenu;
+  $query->closeCursor();
+
+    // AUTEUR
+    $query = $bdd->prepare('SELECT COUNT(*) FROM AUTEUR WHERE nomAuteur=?'); // requête SQL
+    $query->execute(array($auteur)); // paramètres et exécution
+    if($query->fetch()['COUNT(*)']==0){
+      $query = $bdd->prepare('INSERT INTO AUTEUR(nomAuteur) VALUES(?)'); // requête SQL
+      $query->execute(array($auteur)); // paramètres et exécution
+      $query->closeCursor();
+    }
+    $query = $bdd->prepare('SELECT 	idAuteur FROM AUTEUR WHERE nomAuteur=?'); // requête SQL
+    $query->execute(array($auteur)); // paramètres et exécution
+    $idAuteur=$query->fetch()['idAuteur'];
+    $query->closeCursor();
+
+    //CATEGORIE
+    $categorie=$cat[2];
+    $query = $bdd->prepare('SELECT COUNT(*) FROM CATEGORIE WHERE nomCategorie=?'); // requête SQL
+    $query->execute(array($categorie)); // paramètres et exécution
+    if($query->fetch()['COUNT(*)']==0){
+      $query = $bdd->prepare('INSERT INTO CATEGORIE(nomCategorie) VALUES(?)'); // requête SQL
+      $query->execute(array($categorie)); // paramètres et exécution
+      $query->closeCursor();
+    }
+    $query = $bdd->prepare('SELECT idCategorie FROM CATEGORIE WHERE nomCategorie=?'); // requête SQL
+    $query->execute(array($categorie)); // paramètres et exécution
+    $idCategorie=$query->fetch()['idCategorie'];
+    $query->closeCursor();
+
+    $theme=$cat[1];
+    $query = $bdd->prepare('SELECT COUNT(*) FROM THEME WHERE nomTheme=?'); // requête SQL
+    $query->execute(array($theme)); // paramètres et exécution
+    if($query->fetch()['COUNT(*)']==0){
+      $query = $bdd->prepare('INSERT INTO THEME(nomTheme,fkIdCategorie) VALUES(?,?)'); // requête SQL
+      $query->execute(array($theme,$idCategorie)); // paramètres et exécution
+      $query->closeCursor();
+    }
+    $query = $bdd->prepare('SELECT idTheme FROM THEME WHERE nomTheme=?'); // requête SQL
+    $query->execute(array($theme)); // paramètres et exécution
+    $idTheme=$query->fetch()['idTheme'];
+    $query->closeCursor();
+
+    $soustheme=$cat[0];
+    $query = $bdd->prepare('SELECT COUNT(*) FROM SOUSTHEME WHERE nomSousTheme=?'); // requête SQL
+    $query->execute(array($soustheme)); // paramètres et exécution
+    if($query->fetch()['COUNT(*)']==0){
+      $query = $bdd->prepare('INSERT INTO SOUSTHEME(nomSousTheme,fkIdTheme) VALUES(?,?)'); // requête SQL
+      $query->execute(array($soustheme,$idTheme)); // paramètres et exécution
+      $query->closeCursor();
+    }
+    $query = $bdd->prepare('SELECT idSousTheme FROM SOUSTHEME WHERE nomSousTheme=?'); // requête SQL
+    $query->execute(array($soustheme)); // paramètres et exécution
+    $idSousTheme=$query->fetch()['idSousTheme'];
+    $query->closeCursor();
+
+  //INSERTION FINALE DU CONTENU
+  $query = $bdd->prepare('INSERT INTO CONTENU(url,nom,description,image,fkIdLicence,fkIdTypeContenu,fkIdAuteur,fkIdSousTheme) VALUES(?,?,?,?,?,?,?,?)'); // requête SQL
+  $query->execute(array($url,$nom,$description,$image,$idLicense,$fkIdTypeContenu,$idAuteur,$idSousTheme)); // paramètres et exécution
   $query->closeCursor();
 }
-$query = $bdd->prepare('SELECT idTypeContenu FROM TYPECONTENU WHERE nomContenu=?'); // requête SQL
-$query->execute(array($type)); // paramètres et exécution
-$fkIdTypeContenu=$query->fetch()['idTypeContenu'];
-echo $fkIdTypeContenu;
-$query->closeCursor();
+/*
 
-// TIME TO RECUPERER LE LIVRE !!!
-if ($xml === false) {
-    echo "Failed loading XML: ";
-    foreach(libxml_get_errors() as $error) {
-        echo "<br>", $error->message[@attributes];
-    }
-} else {
-	foreach($xml as $item){
-    echo '<hr/>';
-    // URL
-    foreach($item->link as $a){
-      if($a->attributes()->type=='application/pdf'){
-        $url=(string)($a->attributes()->href);
-      }
-    }
+
+
+
+
+
     // NOM
-    $nom=$item->title;
-    $description=$item->content;
-    if(!empty($nom)){
-      // AUTEUR
-      $auteur=$item->author->name;
-      $query = $bdd->prepare('SELECT COUNT(*) FROM AUTEUR WHERE nomAuteur=?'); // requête SQL
-      $query->execute(array($auteur)); // paramètres et exécution
-      if($query->fetch()['COUNT(*)']==0){
-        $query = $bdd->prepare('INSERT INTO AUTEUR(nomAuteur) VALUES(?)'); // requête SQL
-        $query->execute(array($auteur)); // paramètres et exécution
-        $query->closeCursor();
-      }
-      $query = $bdd->prepare('SELECT 	idAuteur FROM AUTEUR WHERE nomAuteur=?'); // requête SQL
-      $query->execute(array($auteur)); // paramètres et exécution
-      $idAuteur=$query->fetch()['idAuteur'];
-      echo $idAuteur;
-      echo '<br/>';
-      $query->closeCursor();
 
       // CATEGORIES
       $cat =  array();
@@ -125,27 +168,14 @@ if ($xml === false) {
       $query->closeCursor();
 
 
-      $query = $bdd->prepare('SELECT COUNT(*) FROM CONTENU WHERE nom=?'); // requête SQL
-      $query->execute(array($nom)); // paramètres et exécution
-      if($query->fetch()['COUNT(*)']==0){
-        $query = $bdd->prepare('INSERT INTO CONTENU(url,nom,description,fkIdLicence,fkIdTypeContenu,fkIdAuteur,fkIdSousTheme) VALUES(?,?,?,?,?,?,?)'); // requête SQL
-        $query->execute(array($url,$nom,$description,$idLicense,$fkIdTypeContenu,$idAuteur,$idSousTheme)); // paramètres et exécution
-        $query->closeCursor();
-      }
-      $query->closeCursor();
-
-
-      //
-    /*  if (!empty($categorie)) {
-        print_r((string)$categorie);
-      } */
     }
 	}
-}
+}*/
 
 ?>
 
 <hr/>
+
 /*
 
 
