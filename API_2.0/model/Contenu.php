@@ -28,14 +28,11 @@ class Contenu implements Model
     }
 
     public function getById($id){
-        $query = $this->pdo->prepare("SELECT * FROM p1612212.CONTENU WHERE idContenu=:id");
-        $query->execute(array('id'=>$id));
-        $tabContenu = [];
-        $tabContenu[]= $query->fetch();
-        $query->closeCursor();
         $query = $this->pdo->prepare("UPDATE CONTENU SET nbClic=nbClic+1 WHERE idContenu = :id");
         $query->execute(array('id'=>$id));
-        return $tabContenu;
+        $query = $this->pdo->prepare("SELECT * FROM p1612212.CONTENU WHERE idContenu=:id");
+        $query->execute(array('id'=>$id));
+        return $query->fetch();
     }
 
     public function getByName($name)
@@ -66,11 +63,25 @@ class Contenu implements Model
         return $tabContenu;
     }
 
-    public function getByAuthor($author)
+    public function getByAuthorName($author)
     {
         $r = "SELECT * FROM CONTENU JOIN AUTEUR ON CONTENU.fkIdAuteur = AUTEUR.idAuteur WHERE AUTEUR.nomAuteur SOUNDS LIKE :author OR UPPER(nom) LIKE UPPER('%".$author."%')";
         $query = $this->pdo->prepare($r);
         $query->execute(array('author'=> $author));
+        $tabContenu = [];
+        while($data = $query->fetch())
+        {
+            $tabContenu[]=$data;
+        }
+        $query->closeCursor();
+        return $tabContenu;
+    }
+
+    public function getByAuteur($id)
+    {
+        $r = "SELECT * FROM CONTENU WHERE fkIdAuteur = ?";
+        $query = $this->pdo->prepare($r);
+        $query->execute(array($id));
         $tabContenu = [];
         while($data = $query->fetch())
         {

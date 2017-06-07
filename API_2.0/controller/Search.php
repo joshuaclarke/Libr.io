@@ -20,8 +20,6 @@ class Search
         $tabData = [];
         $contenu = new Contenu();
         $tabData[] = $contenu->getByName($search);
-        $auteur = new Auteur();
-        $tabData[] = $auteur->getByName($search);
         echo json_encode($tabData);
     }
 
@@ -34,12 +32,24 @@ class Search
 
     public function searchById($id)
     {
+      $tabData = [];
       $contenu = new Contenu();
-      //echo $contenu->getById($id);
-      echo json_encode($contenu->getById($id));
+      $tabData[]=$contenu->getById($id);
+
+      $auteur = new Auteur();
+      $tabData[] = $auteur->getById($tabData[0]['fkIdAuteur']);
+      echo json_encode($tabData);
     }
 
 
+
+    public function searchByAuteur($id)
+    {
+      $tabData = [];
+      $contenu = new Contenu();
+      $tabData[]=$contenu->getByAuteur($id);
+      echo json_encode($tabData);
+    }
 
 
 

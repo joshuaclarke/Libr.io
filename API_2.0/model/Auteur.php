@@ -32,10 +32,7 @@ class Auteur implements Model
     {
         $query = $this->pdo->prepare("SELECT * FROM AUTEUR WHERE idAuteur=:id");
         $query->execute(array('id'=>$id));
-        $tabContenu = [];
-        $tabContenu[]=$data;
-        $query->closeCursor();
-        return $tabContenu;
+        return $query->fetch();
     }
 
     public function getByName($name)

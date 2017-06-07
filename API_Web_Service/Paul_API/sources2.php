@@ -3,7 +3,7 @@ require_once("connexion_bdd.php");
 
 $bdd = connectDb();
 
-$url = 'http://api.jamendo.com/v3.0/tracks/?client_id=709fa152';
+$url = 'http://api.jamendo.com/v3.0/tracks/?client_id=709fa152&limit=200';
 $content = file_get_contents($url);
 $json = json_decode($content, true);
 
