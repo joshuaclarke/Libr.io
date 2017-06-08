@@ -132,6 +132,19 @@ class Contenu implements Model
         return $tabContenu;
     }
 
+    public function getDecouvertes()
+    {
+        $query = $this->pdo->prepare("SELECT * FROM p1612212.CONTENU ORDER BY nbClic DESC LIMIT 10");
+        $query->execute();
+        $tabContenu = [];
+        while($data = $query->fetch())
+        {
+            $tabContenu [] = $data;
+        }
+        $query->closeCursor();
+        return $tabContenu;
+    }
+
   private $pdo;
 
 }

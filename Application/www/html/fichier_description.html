@@ -160,7 +160,7 @@
   <div class="row">
     <div class="col-xs-12 caracteristique auteur"><span>Auteur : </span><a href="" id="auteur">nom</a></div>
     <div class="col-xs-12 caracteristique annee"><span>Date de création : </span><span id="date">19xx</span></div>
-    <div class="col-xs-12 caracteristique source"><span>Source : </span>nom de la source</div>
+    <div class="col-xs-12 caracteristique source"><span>Source : </span><a href="" id="source">nom de la source</a></div>
     <div class="col-xs-12 caracteristique taille"><span>Taille : </span>octets</div>
   </div>
 
@@ -207,6 +207,8 @@ function myFunction(reponse) {
     document.getElementById("auteur").innerHTML=auteur.nomAuteur;
     document.getElementById("auteur").href="resultats_auteur.html?get="+auteur.idAuteur;
     document.getElementById("date").innerHTML=livre.dateSoumis;
+    document.getElementById("source").innerHTML=livre.url;
+    document.getElementById("source").href=livre.url;
 }
 
 function vote(e){

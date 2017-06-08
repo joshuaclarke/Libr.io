@@ -17,4 +17,10 @@ class Home
         $tabData = $list->getTopTen();
         echo json_encode($tabData);
     }
+    public function decouvertes()
+    {
+        $list = new Contenu();
+        $tabData = $list->getDecouvertes();
+        echo json_encode($tabData);
+    }
 }
