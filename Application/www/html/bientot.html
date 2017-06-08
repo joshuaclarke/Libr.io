@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+
+<title>fichier description</title>
+
+
+<!-----------------Bootstrap core CSS----------------------->
+<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="../css/index.css" rel="stylesheet">
+<link href="../css/fichier.css" rel="stylesheet">
+
+
+<!-----------------les étoiles----------------->
+<link href="../css/etoile.css" rel="stylesheet">
+
+<style>
+  [class*="lienDescription"]{
+    border-bottom: 2px solid black;
+    border-top:0 ;
+    border-left: 0;
+    border-right: 0;
+  }
+</style>
+</head>
+
+<body class="cbp-spmenu-push">
+
+<header class="col-xs-12 head">
+    <div class="col-xs-2"><button id="showLeft"><img src="../src/img/menu.png" /></button></div>
+    <div class="col-xs-2"><a href="../index.html"><img class="logoPrincipal" src="../src/img/logo.png" alt="libr.io"></a></div>
+    <div class="col-xs-1">Libr.io</div>
+</header>
+
+
+<nav class="menu menu-vertical menu-left" id="menu-s1">
+  <a href="../index.html"><img class="menu_link" src="../src/img/iconeAccueil.png ">Accueil</a>
+  <a href="../html/inscription.html"><img class="menu_link" src="../src/img/account.png">Inscription</a>
+  <a href="../html/connexion.html"><img class="menu_link" src="../src/img/connexion.png">Connexion</a>
+  <a href="../html/resultats.html"><img class="menu_link" src="../src/img/search.png">Themes</a>
+  <a href="../html/playlists.html"><img class="menu_link" src="../src/img/list.png">Mes playlists</a>
+  <a href="../html/proposition.html"><img class="menu_link" src="../src/img/link.png">Proposer</a>
+  <a href="../index.html#suggestion"><img class="menu_link" src="../src/img/suggestion.png">Suggestions</a>
+  <a href="../html/parametres.html"><img class="menu_link" src="../src/img/param.png">Parametrès</a>
+  <a href="../html/apropos.html"><img class="menu_link" src="../src/img/propos.png">A propos</a>
+  <a href="../html/contact.html"><img class="menu_link" src="../src/img/contact.png">Contact</a>
+</nav>
+
+
+<script src="../js/classe.js"></script>
+<script >
+    var menuLeft = document.getElementById( 'menu-s1' ),
+        showLeft = document.getElementById( 'showLeft' ),
+        body = document.body;
+
+    showLeft.onclick = function() {
+        classe.toggle( this, 'active' );
+        classe.toggle( menuLeft, 'menu-open' );
+        disableOther( 'showLeft' );
+    };
+
+    function disableOther( button ) {
+        if( button !== 'showLeft' ) {
+            classe.toggle( showLeft, 'disabled' );
+        }
+    }
+</script>
+
+
+<figure>
+  <img style="width:100%" src="https://media.giphy.com/media/fAT2Db0j0Mblu/giphy.gif"/>
+  <figcaption><h3 style="text-align:center">Bientôt disponible !</h3></figcaption>
+</figure>
+
+
+</div>
+
+</body>
+</html>
